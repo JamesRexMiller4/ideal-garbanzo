@@ -7,7 +7,7 @@ const Form = () => {
   return (
     <section>
       <form>
-        <input type='text' placeHolder="Search Bar" />
+        <input type='text' placeholder="Search Bar" />
         <button type='button'>Search</button>
       </form>
       <div>
