@@ -6,12 +6,16 @@ body {
   }
 }
 
-h1 {
-  font-family: $logo-font;
-  letter-spacing: 0.5em;
+header, footer {
+  background-color: $spectrum-gradient;
 }
 
-
+h1 {
+  font-family: $logo-font;
+  font-weight: bold;
+  letter-spacing: 0.5em;
+  color: #FFFFFF;
+}
 
 button {
   padding: .5rem;
