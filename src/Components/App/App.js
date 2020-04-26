@@ -13,6 +13,8 @@ import Footer from '../Footer/Footer';
 
 
 function App() {
+  const [ data, setData ] = useState([])
+  
   return (
     <div className="App">
       <Header />
