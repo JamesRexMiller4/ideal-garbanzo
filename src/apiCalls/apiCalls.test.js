@@ -1,6 +1,6 @@
 import { getData } from './apiCalls';
 
-describe('ApiCalls', () => {
+describe('apiCalls', () => {
   let mockResponse;
   beforeEach(() => {
     mockResponse = [{
@@ -65,4 +65,4 @@ describe('ApiCalls', () => {
 
     expect(getData()).rejects.toEqual(Error('fetch failed'));
   });
-})
+});
