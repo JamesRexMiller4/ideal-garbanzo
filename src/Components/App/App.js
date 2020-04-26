@@ -4,20 +4,49 @@ import Header from '../Header/Header';
 import Form from '../Form/Form';
 import ResultsContainer from '../ResultsContainer/ResultsContainer';
 import Footer from '../Footer/Footer';
+import { getData } from '../../apiCalls/apiCalls.js';
 
-// TODO: fetch data from API endpoint using useEffect, store in state
+const App = () => {
+  const [ data, setData ] = useState([])
+  const [ error, setError ] = useState('')
 
-// TODO: add function that cleans data, omitting unused values
+  useEffect(() => {
+      getData().then(data => {
+        let cleanedData = data.map(restaurant => {
+          return {
+            id: restaurant["id"],
+            name: restaurant["name"],
+            address1: restaurant["address1"],
+            city: restaurant["city"],
+            state: restaurant["state"],
+            zip: restaurant["zip"],
+            telephone: restaurant["telephone"],
+            tags: restaurant["tags"],
+            website: restaurant["website"],
+            genre: restaurant["genre"],
+            hours: restaurant["hours"],
+            attire: restaurant["attire"]
+          }
+        })
 
-// TODO: add function that reformats genres to individual strings, and categorizes them
+        cleanedData.forEach(rest => {
+          rest["genre"] = rest["genre"].split(',');
+          rest["tags"] = rest["tags"].split(',');
+        })
 
+        setData(cleanedData)
+      })
+      .catch(error => setError(error))
+  }, [])
 
-function App() {
   return (
     <div className="App">
       <Header />
       <Form />
-      <ResultsContainer />
+      {
+        data ? <ResultsContainer data={data}/>
+        : <h2>{error}</h2>
+      }
       <Footer />
     </div>
   );
