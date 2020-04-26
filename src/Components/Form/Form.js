@@ -7,7 +7,7 @@ const Form = () => {
   return (
     <section>
       <form>
-        <input type='text'>Search Bar</input>
+        <input type='text' placeHolder="Search Bar" />
         <button type='button'>Search</button>
       </form>
       <div>
@@ -16,7 +16,7 @@ const Form = () => {
         <section>
           <fieldset>
             <legend>Region/Country/Continent</legend>
-            <input type='checkbox'></input>
+            <input type='checkbox' />
             <label></label>
           </fieldset>
         </section>
