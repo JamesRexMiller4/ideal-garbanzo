@@ -8,40 +8,45 @@ import { getData } from '../../apiCalls/apiCalls.js';
 
 const App = () => {
   const [ data, setData ] = useState([])
+  const [ error, setError ] = useState('')
 
   useEffect(() => {
-    getData().then(data => {
-      let cleanedData = data.map(restaurant => {
-        return {
-          id: restaurant["id"],
-          name: restaurant["name"],
-          address1: restaurant["address1"],
-          city: restaurant["city"],
-          state: restaurant["state"],
-          zip: restaurant["zip"],
-          telephone: restaurant["telephone"],
-          tags: restaurant["tags"],
-          website: restaurant["website"],
-          genre: restaurant["genre"],
-          hours: restaurant["hours"],
-          attire: restaurant["attire"]
-        }
-      })
+      getData().then(data => {
+        let cleanedData = data.map(restaurant => {
+          return {
+            id: restaurant["id"],
+            name: restaurant["name"],
+            address1: restaurant["address1"],
+            city: restaurant["city"],
+            state: restaurant["state"],
+            zip: restaurant["zip"],
+            telephone: restaurant["telephone"],
+            tags: restaurant["tags"],
+            website: restaurant["website"],
+            genre: restaurant["genre"],
+            hours: restaurant["hours"],
+            attire: restaurant["attire"]
+          }
+        })
 
-      cleanedData.forEach(rest => {
-        rest["genre"] = rest["genre"].split(',');
-        rest["tags"] = rest["tags"].split(',');
-      })
+        cleanedData.forEach(rest => {
+          rest["genre"] = rest["genre"].split(',');
+          rest["tags"] = rest["tags"].split(',');
+        })
 
-      setData(cleanedData)
-    })
+        setData(cleanedData)
+      })
+      .catch(error => setError(error))
   }, [])
 
   return (
     <div className="App">
       <Header />
       <Form />
-      <ResultsContainer data={data}/>
+      {
+        data ? <ResultsContainer data={data}/>
+        : <h2>{error}</h2>
+      }
       <Footer />
     </div>
   );
