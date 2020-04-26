@@ -1,0 +1,24 @@
+@import './variables.scss';
+
+body {
+  * {
+    font-family: $base-font;
+  }
+}
+
+header, footer {
+  background-color: $spectrum-gradient;
+}
+
+h1 {
+  font-family: $logo-font;
+  font-weight: bold;
+  letter-spacing: 0.5em;
+  color: #FFFFFF;
+}
+
+button {
+  padding: .5rem;
+  border-radius: .5rem;
+  border: 1px solid;
+}
