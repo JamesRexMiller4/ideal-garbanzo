@@ -4,20 +4,13 @@ import Header from '../Header/Header';
 import Form from '../Form/Form';
 import ResultsContainer from '../ResultsContainer/ResultsContainer';
 import Footer from '../Footer/Footer';
+import { getData } from '../../apiCalls/apiCalls.js';
 
 const App = () => {
   const [ data, setData ] = useState([])
 
   useEffect(() => {
-    fetch('https://code-challenge.spectrumtoolbox.com/api/restaurants', {
-      "method": "GET",
-      "headers": {
-        "Content-Type": "application/json",
-        "Authorization": "Api-Key q3MNxtfep8Gt"
-      }
-    })
-    .then(res => res.json())
-    .then(data => {
+    getData().then(data => {
       let cleanedData = data.map(restaurant => {
         return {
           id: restaurant["id"],
