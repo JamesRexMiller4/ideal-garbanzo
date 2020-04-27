@@ -9,6 +9,14 @@ body {
 
 header, footer {
   background-image: $spectrum-gradient;
+  padding: 2rem;
+  .spectrum-icon {
+    width: 1rem;
+  }
+  
+  .logo-div {
+    display: flex;
+  }
 }
 
 h1 {
