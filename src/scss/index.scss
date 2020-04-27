@@ -1,3 +1,4 @@
+@import './reset.scss';
 @import './variables.scss';
 
 body {
@@ -7,13 +8,20 @@ body {
 }
 
 header, footer {
-  background-color: $spectrum-gradient;
+  background-image: $spectrum-gradient;
 }
 
 h1 {
   font-family: $logo-font;
   font-weight: bold;
-  letter-spacing: 0.5em;
+  font-size: 2rem;
+  color: #FFFFFF;
+}
+
+h2 {
+  font-family: $base-font;
+  font-size: 1.5rem;
+  font-weight: bold;
   color: #FFFFFF;
 }
 
