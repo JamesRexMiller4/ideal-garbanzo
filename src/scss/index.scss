@@ -14,7 +14,14 @@ header, footer {
 h1 {
   font-family: $logo-font;
   font-weight: bold;
-  letter-spacing: 0.5em;
+  font-size: 2rem;
+  color: #FFFFFF;
+}
+
+h2 {
+  font-family: $base-font;
+  font-size: 1.5rem;
+  font-weight: bold;
   color: #FFFFFF;
 }
 
