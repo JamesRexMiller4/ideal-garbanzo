@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer should render the snapshot 1`] = `
+<footer>
+  <div
+    className="logo-div"
+  >
+    <h1>
+      Spectrum
+    </h1>
+    <img
+      alt="play"
+      className="spectrum-icon"
+      src="play.svg"
+    />
+  </div>
+  <img
+    alt="facebook"
+    className="social-icon"
+    src="facebook.svg"
+  />
+  <img
+    alt="twitter"
+    className="social-icon"
+    src="twitter.svg"
+  />
+  <img
+    alt="instagram"
+    className="social-icon"
+    src="instagram.svg"
+  />
+  <img
+    alt="youtube"
+    className="social-icon"
+    src="youtube.svg"
+  />
+</footer>
+`;
