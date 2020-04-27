@@ -1,3 +1,4 @@
+@import './reset.scss';
 @import './variables.scss';
 
 body {
@@ -7,7 +8,7 @@ body {
 }
 
 header, footer {
-  background-color: $spectrum-gradient;
+  background-image: $spectrum-gradient;
 }
 
 h1 {
