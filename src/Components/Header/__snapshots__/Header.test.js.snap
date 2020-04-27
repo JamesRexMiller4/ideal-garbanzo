@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header should render the snapshot 1`] = `
+<header>
+  <div
+    className="logo-div"
+  >
+    <h1>
+      Spectrum
+    </h1>
+    <img
+      alt="play button"
+      className="spectrum-icon"
+      src="play.svg"
+    />
+  </div>
+  <h2
+    className="app-title"
+  >
+    Ideal Garbanzo Service
+  </h2>
+</header>
+`;

@@ -1,10 +1,15 @@
 import React from 'react';
 import './Header.scss';
+import play from '../../icons/play.svg';
 
 const Header = () => {
   return ( 
     <header>
-      <h1>Spectrum's Ideal Garbanzo Service</h1>
+      <div className='logo-div'>
+        <h1>Spectrum</h1>
+        <img className='spectrum-icon' src={play} alt='play button'/>
+      </div>
+      <h2 className='app-title'>Ideal Garbanzo Service</h2>
     </header>
   );
 }
