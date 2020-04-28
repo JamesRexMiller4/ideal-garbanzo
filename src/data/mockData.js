@@ -80,3 +80,5 @@ const mockData = [
       "attire": "Casual"
   }
 ]
+
+export default mockData;
