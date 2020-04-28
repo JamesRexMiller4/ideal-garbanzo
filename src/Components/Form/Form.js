@@ -16,7 +16,7 @@ const Form = ({ data, results, setFilteredResults }) => {
 
   const generateStateOptions = () => {
     return utilData["states"].map((state, index) => {
-      return <option key={index} id={index} value={index}>{state}</option>
+      return <option key={state} id={index} value={index}>{state}</option>
     });
   };
 
@@ -34,14 +34,14 @@ const Form = ({ data, results, setFilteredResults }) => {
 
     const makeFieldsets = (parent, legend) => {
       return (
-        <form className='fieldset-form'>
+        <div className='fieldset-form-div'>
           <fieldset className='fieldset-container'key={legend + "-fieldset"}>
             <legend key={legend + "-legend"}>{legend}</legend>
             <div className='checkboxes-div'>
               {makeCheckboxes(parent[legend], legend)}
             </div>
           </fieldset>
-        </form>
+        </div>
       )
     };
 
