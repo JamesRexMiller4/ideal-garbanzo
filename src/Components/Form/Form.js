@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Form.scss';
-import utilData from './utilData.js';
+import utilData from '../../data/utilData.js';
 
 const Form = ({ data, results, setFilteredResults }) => {
   const [ query, setQuery ] = useState('');
