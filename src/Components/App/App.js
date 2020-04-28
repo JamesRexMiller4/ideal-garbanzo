@@ -9,38 +9,44 @@ import { getData } from '../../apiCalls/apiCalls.js';
 const App = () => {
   const [ data, setData ] = useState([]);
   const [ error, setError ] = useState('');
+  
+  useEffect(() => {
+    getData().then(data => {
+      let cleanedData = data.map(restaurant => {
+        return {
+          id: restaurant["id"],
+          name: restaurant["name"],
+          address1: restaurant["address1"],
+          city: restaurant["city"],
+          state: restaurant["state"],
+          zip: restaurant["zip"],
+          telephone: restaurant["telephone"],
+          tags: [...new Set(restaurant["tags"])],
+          website: restaurant["website"],
+          genre: restaurant["genre"],
+          hours: restaurant["hours"],
+          attire: restaurant["attire"]
+        }
+      });
+      
+      setData(cleanedData)
+    })
+    .catch(error => setError(error))
+  }, []);
 
-
+  
   const alphabatizeResults = (results=data) => {
     const newResults = [...results]
     return  newResults.sort((a, b) => a.name > b.name ? 1 : -1)
-  }
-
+  };
+  
   const [results, setResults ] = useState(alphabatizeResults());
+  const [ clear, setClear ] = useState(false);
 
-  useEffect(() => {
-    getData().then(data => {
-        let cleanedData = data.map(restaurant => {
-          return {
-            id: restaurant["id"],
-            name: restaurant["name"],
-            address1: restaurant["address1"],
-            city: restaurant["city"],
-            state: restaurant["state"],
-            zip: restaurant["zip"],
-            telephone: restaurant["telephone"],
-            tags: [...new Set(restaurant["tags"])],
-            website: restaurant["website"],
-            genre: restaurant["genre"],
-            hours: restaurant["hours"],
-            attire: restaurant["attire"]
-          }
-        });
-
-        setData(cleanedData)
-      })
-      .catch(error => setError(error))
-  }, []);
+  const resetResults = () => {
+    setResults(alphabatizeResults())
+    setClear(false)
+  };
 
   const setFilteredResults = ({results, selectedState, query}) => {
 
@@ -81,6 +87,7 @@ const App = () => {
 
     if (selectedState) setResults(filterByState(selectedState));
     if (query) setResults([...filterByQuery()]);
+    if (clear) resetResults()
     return;
   };
 
