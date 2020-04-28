@@ -1,6 +1,9 @@
+@import '../../scss/variables.scss';
+
 .results-container-section {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: lighten($base-blue, 80);
 }
