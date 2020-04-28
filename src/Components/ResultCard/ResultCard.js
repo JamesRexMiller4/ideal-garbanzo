@@ -3,19 +3,26 @@ import './ResultCard.scss';
 
 const ResultCard = ({result}) => {
   const [ active, setActive ] = useState(false)
+  console.log(result.genre)
+
+  const generateGenreTags = (genres) => {
+    let splitUpGenres = genres.split(',');
+    return splitUpGenres.map(genre => <button>{genre}</button>)
+  }
+
 
   return ( 
     <article>
-      <h3>{result.name}</h3>
-      <h3>{result.city}</h3>
-      <h3>{result.state}</h3>
-      <h3>{result.phone}</h3>
-      <h3>{result.genres}</h3>
-      <ul>
-        <li>Genre 1</li>
-        <li>Genre 2</li>
-        <li>Genre 13</li>
-      </ul>
+      <div>
+        <h3>{result.name}</h3>
+        <div>
+          <h3>{result.city}</h3>
+          <h3>{result.state}</h3>
+        </div>
+        <h3>{result.phone}</h3>
+      </div>
+      <h3>{result.genre}</h3>
+      {generateGenreTags(result.genre)}
       { active && (
         <div>
           <h4>Additional Info</h4>
