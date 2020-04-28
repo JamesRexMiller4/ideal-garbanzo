@@ -743,7 +743,7 @@ exports[`Form should render a different snapshot if advancedSearch is true 1`] =
         className="search-bar-div"
       >
         <input
-          id="#search-bar"
+          id="search-bar"
           onChange={[Function]}
           placeholder="Search Bar"
           type="text"
@@ -1899,7 +1899,7 @@ exports[`Form should render the snapshot 1`] = `
         className="search-bar-div"
       >
         <input
-          id="#search-bar"
+          id="search-bar"
           onChange={[Function]}
           placeholder="Search Bar"
           type="text"
