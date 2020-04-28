@@ -2,11 +2,11 @@ import React from 'react';
 import './ResultsContainer.scss';
 import ResultCard from '../ResultCard/ResultCard';
 
-const ResultsContainer = (props) => {
-  // TODO: receive fetch data from App, map over and generate cards
+const ResultsContainer = ({results}) => {
+  const resultCards = results.map(result => <ResultCard result={result}/>)
   return ( 
     <section>
-      {/* [<ResultCard />, <ResultCard />, <ResultCard/> ]*/}
+      {resultCards}
     </section>
   );
 }
