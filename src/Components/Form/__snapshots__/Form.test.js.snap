@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Form should render a different snapshot if advancedSearch is true 1`] = `
+exports[`Form handleClick: should render a different snapshot if advancedSearch is true 1`] = `
 <Form
   data={
     Array [
