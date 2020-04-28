@@ -25,7 +25,7 @@ const Form = ({ data, results, setFilteredResults }) => {
       return (
         <div className='checkbox-div'>
           <input key={val} id={val} type="checkbox" name={legend} value={val} />
-          <label key={val + "-label"} for={val}>{val}</label>
+          <label key={val + "-label"} htmlFor={val}>{val}</label>
         </div>)
     }
     const makeCheckboxes = (arr, legend) => {
@@ -68,7 +68,7 @@ const Form = ({ data, results, setFilteredResults }) => {
       <form className='main-form'>
         <section className='regular-search-section'>
             <div className='select-state-div'>
-              <label for='select-state'>Filter by State</label>
+              <label htmlFor='select-state'>Filter by State</label>
               <select id='select-state' name='select' 
                 onChange={(e) => setFilteredResults(results, 
                   e.target.value, query)}>
@@ -91,7 +91,7 @@ const Form = ({ data, results, setFilteredResults }) => {
             onClick={handleClick}>{advancedSearch ? "-" : "+" }</button>
           </div>
           <div className='filters-fieldsets-div'>
-            {advancedSearchFilters()}
+            {advancedSearch && advancedSearchFilters()}
           </div>
         </section>
       </form> 
