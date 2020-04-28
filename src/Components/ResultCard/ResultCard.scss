@@ -1,0 +1,60 @@
+@import '../../scss/variables.scss';
+
+article {
+  width: 80%;
+  border: 3px solid;
+  border-radius: .2rem;
+  background-color: rgba(248, 248, 248, 0.964);
+  padding: 3rem;
+  margin: .5rem;
+
+  .result-card-section {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  h3 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  h4 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: normal;
+  }
+}
+
+.genre-tag-btn {
+  background-color: $background-blue-gray;
+  color: $base-blue;
+  border: 2px solid;
+}
+
+.additional-info-div {
+  padding-top: 2rem;
+  width: 100%;
+
+  h4 {
+    margin-top: 1rem;
+    font-weight: bold;
+  }
+
+  h5 {
+    padding-top: 1rem;
+  }
+
+  button {
+    margin-top: 1rem;
+  }
+
+  section {
+    display: flex;
+    align-items: space-around;
+    justify-content: space-around;
+  }
+}
+
+.tags-container-div {
+  width: 50%;
+}

@@ -7,7 +7,7 @@ const ResultsContainer = ({results}) => {
   <ResultCard key={result.id} id={result.it} result={result}/>))
   
   return ( 
-    <section>
+    <section className="results-container-section">
       {resultCards}
     </section>
   );
