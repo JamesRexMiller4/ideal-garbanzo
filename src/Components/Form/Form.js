@@ -27,7 +27,8 @@ const Form = ({ data, results, setFilteredResults }) => {
           <input key={val} id={val} type="checkbox" name={legend} value={val} />
           <label key={val + "-label"} htmlFor={val}>{val}</label>
         </div>)
-    }
+    };
+    
     const makeCheckboxes = (arr, legend) => {
       return arr.map((value) => makeACheckbox(value, legend));
     };
@@ -76,7 +77,7 @@ const Form = ({ data, results, setFilteredResults }) => {
               </select>
             </div>
           <div className='search-bar-div'>
-            <input id='#search-bar' type='text' value={query} 
+            <input id='search-bar' type='text' value={query} 
             placeholder="Search Bar" onChange={handleChange}/>
             <button type='button' onSubmit={setFilteredResults({
               results: results,
