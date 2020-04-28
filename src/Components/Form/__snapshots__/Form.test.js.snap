@@ -781,7 +781,7 @@ exports[`Form handleClick: should render a different snapshot if advancedSearch 
         </button>
       </div>
       <div
-        className="filters-fieldsets-div"
+        className="filters-fieldsets-div exposed"
       >
         <div
           className="fieldset-form-div"
