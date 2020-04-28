@@ -23,7 +23,7 @@ const Form = ({ data, results, setFilteredResults }) => {
   const advancedSearchFilters = () => {
     const makeACheckbox = (val, legend) => {
       return (
-        <div className='checkbox-div'>
+        <div key={val + '-div'} className='checkbox-div'>
           <input key={val} id={val} type="checkbox" name={legend} value={val} />
           <label key={val + "-label"} htmlFor={val}>{val}</label>
         </div>)
@@ -34,9 +34,9 @@ const Form = ({ data, results, setFilteredResults }) => {
 
     const makeFieldsets = (parent, legend) => {
       return (
-        <div className='fieldset-form-div'>
-          <fieldset key={legend + "-fieldset"}>
-            <legend key={legend + "-legend"}>{legend}</legend>
+        <div key={legend + "-fieldset-div"} className='fieldset-form-div'>
+          <fieldset>
+            <legend>{legend}</legend>
             <div className='checkboxes-div'>
               {makeCheckboxes(parent[legend], legend)}
             </div>
