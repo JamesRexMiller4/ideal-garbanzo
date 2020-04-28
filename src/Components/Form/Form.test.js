@@ -6,12 +6,15 @@ import mockData from '../../data/mockData.js';
 import { alphabatizeResults } from '../../utils/utilFunctions.js';
 
 describe('Form', () => {
-  let wrapper, mockSetFilteredResults;
+  let wrapper, mockSetFilteredResults, mockResetResults;
   beforeEach(() => {
     mockSetFilteredResults = jest.fn();
+    mockResetResults = jest.fn();
+
     wrapper = mount(<Form
       data={mockData}
       results={alphabatizeResults(mockData)}
+      resetResults={mockResetResults}
       setFilteredResults={mockSetFilteredResults}
       />);
   });
