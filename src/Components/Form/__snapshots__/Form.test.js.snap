@@ -86,6 +86,7 @@ exports[`Form handleClick: should render a different snapshot if advancedSearch 
       },
     ]
   }
+  resetResults={[MockFunction]}
   results={
     Array [
       Object {
@@ -749,6 +750,12 @@ exports[`Form handleClick: should render a different snapshot if advancedSearch 
           type="text"
           value=""
         />
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          X
+        </button>
         <button
           type="button"
         >
@@ -1334,6 +1341,7 @@ exports[`Form should render the snapshot 1`] = `
       },
     ]
   }
+  resetResults={[MockFunction]}
   results={
     Array [
       Object {
@@ -1905,6 +1913,12 @@ exports[`Form should render the snapshot 1`] = `
           type="text"
           value=""
         />
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          X
+        </button>
         <button
           type="button"
         >

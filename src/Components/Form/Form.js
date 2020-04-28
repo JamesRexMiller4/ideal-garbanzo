@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Form.scss';
 import utilData from '../../data/utilData.js';
 
-const Form = ({ data, results, setFilteredResults }) => {
+const Form = ({ data, results, resetResults, setFilteredResults }) => {
   const [ query, setQuery ] = useState('');
   const [ advancedSearch, setAdvancedSearch ] = useState(false);
 
@@ -79,7 +79,8 @@ const Form = ({ data, results, setFilteredResults }) => {
           <div className='search-bar-div'>
             <input id='search-bar' type='text' value={query} 
             placeholder="Search Bar" onChange={handleChange}/>
-            <button type='button' onSubmit={setFilteredResults({
+            <button type='button' onClick={() => resetResults(setQuery)}>X</button>
+            <button type='button' onClick={setFilteredResults({
               results: results,
               selectedState: null, 
               query: query})}>Search</button>
