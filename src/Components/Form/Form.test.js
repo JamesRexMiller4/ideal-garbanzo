@@ -3,11 +3,7 @@ import {mount} from 'enzyme';
 import Form from './Form';
 import utilData from '../../data/utilData.js';
 import mockData from '../../data/mockData.js';
-
-const alphabatizeResults = (results=mockData) => {
-  const newResults = [...results]
-  return  newResults.sort((a, b) => a.name > b.name ? 1 : -1)
-};
+import { alphabatizeResults } from '../../utils/utilFunctions.js';
 
 describe('Form', () => {
   let wrapper, mockSetFilteredResults;
@@ -15,7 +11,7 @@ describe('Form', () => {
     mockSetFilteredResults = jest.fn();
     wrapper = mount(<Form
       data={mockData}
-      results={alphabatizeResults()}
+      results={alphabatizeResults(mockData)}
       setFilteredResults={mockSetFilteredResults}
       />);
   });
