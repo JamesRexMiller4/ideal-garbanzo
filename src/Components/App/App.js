@@ -42,7 +42,7 @@ const App = () => {
   return (
     <div className="App">
       <Header />
-      <Form />
+      <Form restaurantData={data}/>
       {
         data ? <ResultsContainer data={data}/>
         : <h2>{error}</h2>
