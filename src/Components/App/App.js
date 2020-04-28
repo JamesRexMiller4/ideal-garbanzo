@@ -5,10 +5,13 @@ import Form from '../Form/Form';
 import ResultsContainer from '../ResultsContainer/ResultsContainer';
 import Footer from '../Footer/Footer';
 import { getData } from '../../apiCalls/apiCalls.js';
+import { alphabatizeResults } from '../../utils/utilFunctions.js';
 
 const App = () => {
   const [ data, setData ] = useState([]);
   const [ error, setError ] = useState('');
+  const [ clear, setClear ] = useState(false);  
+  const [ results, setResults ] = useState([]);
   
   useEffect(() => {
     getData().then(data => {
@@ -30,28 +33,20 @@ const App = () => {
       });
       
       setData(cleanedData)
+      setResults(alphabatizeResults(data))
     })
     .catch(error => setError(error))
   }, []);
 
-  
-  const alphabatizeResults = (results=data) => {
-    const newResults = [...results]
-    return  newResults.sort((a, b) => a.name > b.name ? 1 : -1)
-  };
-  
-  const [results, setResults ] = useState(alphabatizeResults());
-  const [ clear, setClear ] = useState(false);
-
-  const resetResults = () => {
-    setResults(alphabatizeResults())
-    setClear(false)
+  const resetResults = (setQuery) => {
+    setResults(alphabatizeResults(data));
+    setQuery('');
   };
 
-  const setFilteredResults = ({results, selectedState, query}) => {
+  const setFilteredResults = (resultsData, selectedState, query) => {
 
     const filterByState = () => {
-      return results.filter(result => {
+      return resultsData.filter(result => {
         if (selectedState) {
           return (result.state === selectedState);
         }
@@ -61,7 +56,7 @@ const App = () => {
 
     const filterByQuery = () => {
       const filterByGenre = () => {
-        return results.filter(result => result.genres.includes(query));
+        return resultsData.filter(result => result.genres.includes(query));
       };
 
       const filterByName = (filteredResults => {
@@ -80,14 +75,13 @@ const App = () => {
         });
       });
 
-      let results = [...filterByName([...filterByGenre(query)])];
-      results = [...filterByCity(results)];
-      return results;
+      let newResults = [...filterByName([...filterByGenre(query)])];
+      newResults = [...filterByCity(newResults)];
+      return newResults;
     };
 
     if (selectedState) setResults(filterByState(selectedState));
     if (query) setResults([...filterByQuery()]);
-    if (clear) resetResults()
     return;
   };
 
@@ -97,6 +91,7 @@ const App = () => {
       <Form 
         data={data}
         results={results}
+        resetResults={resetResults}
         setFilteredResults={setFilteredResults}/>
       { data ? <ResultsContainer results={results}/> 
         : <h2>{error}</h2> }
