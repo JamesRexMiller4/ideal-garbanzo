@@ -35,7 +35,7 @@ const Form = ({ data, results, setFilteredResults }) => {
     const makeFieldsets = (parent, legend) => {
       return (
         <div className='fieldset-form-div'>
-          <fieldset className='fieldset-container'key={legend + "-fieldset"}>
+          <fieldset key={legend + "-fieldset"}>
             <legend key={legend + "-legend"}>{legend}</legend>
             <div className='checkboxes-div'>
               {makeCheckboxes(parent[legend], legend)}
