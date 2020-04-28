@@ -87,7 +87,8 @@ const Form = ({ data, results, setFilteredResults }) => {
         <section className='advanced-search-section'>
           <div className='advanced-search-div'>
             <h3>Advanced Search</h3>
-            <button type='button' onClick={handleClick}>{advancedSearch ? "-" : "+" }</button>
+            <button id='advanced-search-btn' type='button' 
+            onClick={handleClick}>{advancedSearch ? "-" : "+" }</button>
           </div>
           <div className='filters-fieldsets-div'>
             {advancedSearchFilters()}
