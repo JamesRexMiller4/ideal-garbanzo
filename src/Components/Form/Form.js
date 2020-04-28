@@ -92,7 +92,7 @@ const Form = ({ data, results, resetResults, setFilteredResults }) => {
             <button id='advanced-search-btn' type='button' 
             onClick={handleClick}>{advancedSearch ? "-" : "+" }</button>
           </div>
-          <div className='filters-fieldsets-div'>
+          <div className={advancedSearch ? 'filters-fieldsets-div exposed' : 'filters-fieldsets-div'}>
             {advancedSearch && advancedSearchFilters()}
           </div>
         </section>
