@@ -21,6 +21,47 @@ const Form = ({ data, results, setFilteredResults }) => {
   };
 
   const advancedSearchFilters = () => {
+    const makeACheckbox = (val, legend) => {
+      return (
+        <div className='checkbox-div'>
+          <input key={val} id={val} type="checkbox" name={legend} value={val} />
+          <label key={val + "-label"} for={val}>{val}</label>
+        </div>)
+    }
+    const makeCheckboxes = (arr, legend) => {
+      return arr.map((value) => makeACheckbox(value, legend));
+    };
+
+    const makeFieldsets = (parent, legend) => {
+      return (
+        <form className='fieldset-form'>
+          <fieldset className='fieldset-container'key={legend + "-fieldset"}>
+            <legend key={legend + "-legend"}>{legend}</legend>
+            <div className='checkboxes-div'>
+              {makeCheckboxes(parent[legend], legend)}
+            </div>
+          </fieldset>
+        </form>
+      )
+    };
+
+    const recursivelyGenerateFieldsets = (parent, objKeyValue) => { 
+      if (typeof parent[objKeyValue] === 'string') {
+        return makeACheckbox(parent[objKeyValue], parent)
+      }
+      if (Array.isArray(parent[objKeyValue]) && objKeyValue !== 'states') {
+        return makeFieldsets(parent, objKeyValue)
+      }
+
+      const newParent = parent[objKeyValue]
+      const keys = Object.keys(newParent)
+      return keys.forEach(key => recursivelyGenerateFieldsets(newParent, key))
+    };
+
+
+    const legends = Object.keys(utilData);
+
+    return legends.map(key => recursivelyGenerateFieldsets(utilData, key))
   };
 
   return (
