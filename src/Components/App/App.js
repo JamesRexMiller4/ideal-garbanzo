@@ -9,8 +9,7 @@ import { alphabatizeResults } from '../../utils/utilFunctions.js';
 
 const App = () => {
   const [ data, setData ] = useState([]);
-  const [ error, setError ] = useState('');
-  const [ clear, setClear ] = useState(false);  
+  const [ error, setError ] = useState('');  
   const [ results, setResults ] = useState([]);
   
   useEffect(() => {
