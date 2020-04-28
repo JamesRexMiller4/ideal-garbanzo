@@ -79,7 +79,8 @@ const Form = ({ data, results, setFilteredResults }) => {
           <div className='search-bar-div'>
             <input id='search-bar' type='text' value={query} 
             placeholder="Search Bar" onChange={handleChange}/>
-            <button type='button' onSubmit={setFilteredResults({
+            <button type='button'>X</button>
+            <button type='button' onClick={setFilteredResults({
               results: results,
               selectedState: null, 
               query: query})}>Search</button>
