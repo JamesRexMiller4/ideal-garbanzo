@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import './ResultCard.scss';
 
-const ResultCard = (props) => {
+const ResultCard = ({result}) => {
   const [ active, setActive ] = useState(false)
 
   return ( 
     <article>
-      <h3>Restuarant name</h3>
-      <h3>Resaurant city</h3>
-      <h3>Restaurant state</h3>
-      <h3>Restaurant phone</h3>
-      <h3>Restaurant Genres</h3>
+      <h3>{result.name}</h3>
+      <h3>{result.city}</h3>
+      <h3>{result.state}</h3>
+      <h3>{result.phone}</h3>
+      <h3>{result.genres}</h3>
       <ul>
         <li>Genre 1</li>
         <li>Genre 2</li>
