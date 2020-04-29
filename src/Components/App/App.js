@@ -12,6 +12,7 @@ const App = () => {
   const [ data, setData ] = useState([]);
   const [ error, setError ] = useState('');  
   const [ results, setResults ] = useState([]);
+  const [ page, setPage ] = useState(1);
   
   useEffect(() => {
     getData().then(data => {
@@ -78,8 +79,14 @@ const App = () => {
       return newResults;
     };
 
-    if (selectedState) setResults(filterByState(selectedState));
-    if (query) setResults([...filterByQuery()]);
+    if (selectedState) {
+      setResults(filterByState(selectedState));
+      setPage(1);
+    }
+    if (query) {
+      setResults([...filterByQuery()]);
+      setPage(1);
+    }
     return;
   };
 
@@ -91,7 +98,7 @@ const App = () => {
         results={results}
         resetResults={resetResults}
         setFilteredResults={setFilteredResults}/>
-      { data ? <ResultsContainer results={results}/> 
+      { data ? <ResultsContainer page={page} setPage={setPage} results={results}/> 
         : <h2>{error}</h2> }
       <Footer />
     </div>
