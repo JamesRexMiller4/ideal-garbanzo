@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './ResultsContainer.scss';
 import ResultCard from '../ResultCard/ResultCard';
 import next from '../../icons/next.svg';
-import leftArrow from '../../icons/left-arrow.svg';
+import leftArrow from '../../icons/leftArrow.svg';
 
 const ResultsContainer = ({results}) => {
   const [ page, setPage ] = useState(1);
