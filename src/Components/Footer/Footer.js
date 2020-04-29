@@ -1,5 +1,4 @@
 import React from 'react';
-import './Footer.scss';
 import play from '../../icons/play.svg';
 import youtube from '../../icons/youtube.svg';
 import facebook from '../../icons/facebook.svg';

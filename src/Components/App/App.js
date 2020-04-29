@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import './App.scss';
 import Header from '../Header/Header';
 import Form from '../Form/Form';
 import ResultsContainer from '../ResultsContainer/ResultsContainer';

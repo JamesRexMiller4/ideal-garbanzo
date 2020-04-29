@@ -121,7 +121,7 @@ const Form = ({ data, resetResults, setFilteredResults }) => {
           <img className="clear-icon" src={close} alt="clear" onClick={() => resetResults(setFormState)} />
           <img className="search-icon" src={search} alt="search" 
           onClick={() => setFilteredResults(data, formState.query,
-           formState.selectedState, stateAbbreviations, formState.checkedBoxes)} />
+          formState.selectedState, stateAbbreviations, formState.checkedBoxes)} />
         </div>
         <div className='advanced-search-div'>
           <h3>Advanced Search</h3>
