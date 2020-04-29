@@ -6,7 +6,9 @@ const ResultCard = ({result}) => {
 
   const generateGenreTags = (genres) => {
     let splitUpGenres = genres.split(',');
-    return splitUpGenres.map(genre => <button key={genre} className='genre-tag-btn'>{genre}</button>);
+    // remove duplicates
+    splitUpGenres = splitUpGenres.filter((a, b) => splitUpGenres.indexOf(a) === b)
+    return splitUpGenres.map(genre => <button key={Date.now() * Math.random()} className='genre-tag-btn'>{genre}</button>);
   };
 
   const generateHoursOfOperation = (hours) => {

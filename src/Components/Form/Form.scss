@@ -128,6 +128,7 @@ fieldset {
 
 .checkbox-div {
   label {
+    font-weight: normal;
     margin: .5rem;
   }
 }
@@ -135,6 +136,8 @@ fieldset {
 legend {
   text-align: left;
   font-weight: bold;
+  font-style: 'Open-Sans', sans-sarif;
+  font-size: 1.25rem;
   margin: 1rem;
 }
 
