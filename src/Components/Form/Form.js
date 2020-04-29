@@ -20,7 +20,7 @@ const Form = ({ data, results, resetResults, setFilteredResults }) => {
 
   const generateStateOptions = () => {
     return utilData["states"].map((state, index) => {
-      return <option key={state} id={index} value={index}>{state}</option>
+      return <option key={state} id={state} value={state}>{state}</option>
     });
   };
 
@@ -72,9 +72,8 @@ const Form = ({ data, results, resetResults, setFilteredResults }) => {
       <section className='regular-search-section'>
         <div className='select-state-div'>
           <label htmlFor='select-state'>Filter by State</label>
-          <select id='select-state' name='select' 
-            onChange={(e) => setFilteredResults(results, 
-              e.target.value, query)}>
+          <select id='select-state' name='select'
+            onChange={(e) => setFilteredResults(results, e.target.value, query)}>
               {generateStateOptions()}
           </select>
         </div>

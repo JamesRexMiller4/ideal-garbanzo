@@ -6,6 +6,7 @@ import ResultsContainer from '../ResultsContainer/ResultsContainer';
 import Footer from '../Footer/Footer';
 import { getData } from '../../apiCalls/apiCalls.js';
 import { alphabatizeResults } from '../../utils/utilFunctions.js';
+import stateAbbreviations from '../../data/stateAbbreviations.js';
 
 const App = () => {
   const [ data, setData ] = useState([]);
@@ -44,13 +45,14 @@ const App = () => {
 
   const setFilteredResults = (resultsData, selectedState, query) => {
 
-    const filterByState = () => {
-      return resultsData.filter(result => {
-        if (selectedState) {
-          return (result.state === selectedState);
-        }
-        return false;
-      });
+    const filterByState = (selectedState, states=stateAbbreviations) => {
+      console.log(selectedState)
+      
+      const selectedAbbrv = states[selectedState]
+      console.log(selectedAbbrv)
+      const stateData = resultsData.filter(result => result.state === selectedAbbrv && result);
+      console.log(stateData);
+      return stateData
     };
 
     const filterByQuery = () => {
