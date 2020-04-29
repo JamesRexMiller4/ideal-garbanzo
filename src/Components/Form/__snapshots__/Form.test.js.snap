@@ -762,10 +762,6 @@ exports[`Form handleClick: should render a different snapshot if advancedSearch 
           Search
         </button>
       </div>
-    </section>
-    <section
-      className="advanced-search-section"
-    >
       <div
         className="advanced-search-div"
       >
@@ -780,6 +776,10 @@ exports[`Form handleClick: should render a different snapshot if advancedSearch 
           -
         </button>
       </div>
+    </section>
+    <section
+      className="advanced-search-section"
+    >
       <div
         className="filters-fieldsets-div exposed"
       >
@@ -1925,10 +1925,6 @@ exports[`Form should render the snapshot 1`] = `
           Search
         </button>
       </div>
-    </section>
-    <section
-      className="advanced-search-section"
-    >
       <div
         className="advanced-search-div"
       >
@@ -1943,6 +1939,10 @@ exports[`Form should render the snapshot 1`] = `
           +
         </button>
       </div>
+    </section>
+    <section
+      className="advanced-search-section"
+    >
       <div
         className="filters-fieldsets-div"
       />
