@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './ResultsContainer.scss';
 import ResultCard from '../ResultCard/ResultCard';
 import next from '../../icons/next.svg';
@@ -15,8 +15,6 @@ const ResultsContainer = ({page, setPage, results}) => {
   };
 
   const updateCurrentPage = (currentPage, incrementor) => {
-    console.log(TOTALRESULTSLENGTH)
-
     if (incrementor < 0) {
       currentPage === 1 ? setPage(1) : setPage(page - 1);
     }
@@ -36,7 +34,9 @@ const ResultsContainer = ({page, setPage, results}) => {
         <h2>{"Showing " + page + " of " + (Math.floor(results.length / 10) + 1)}</h2>
         <img id="right-arrow" onClick={() => updateCurrentPage(page, 1)} src={next} alt="more-results"/>
       </div>
-        {resultCards}
+        {resultCards.length > 0 ? 
+          resultCards 
+          : <h2 className="error">No results, please try again</h2>}
     </section>
   );
 }
