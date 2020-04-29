@@ -16,6 +16,7 @@ export const filterByQuery = (arr, query) => {
     return record.name.toLowerCase().includes(query.toLowerCase()) ? true
     : record.city.toLowerCase().includes(query.toLowerCase()) ? true
     : record.genre.toLowerCase().includes(query.toLowerCase()) ? true
+    : record.attire.toLowerCase().includes(query.toLowerCase()) ? true
     : null
   });
 };
@@ -28,7 +29,10 @@ export const filterByCheckboxes = (arrData, arrCheckboxes) => {
 
   while (arrCheckboxes[i]) {
     results = results.filter(record => {
-      return record.genre.toLowerCase().includes(arrCheckboxes[i].toLowerCase())
+      return record.genre.toLowerCase().includes(arrCheckboxes[i].toLowerCase()) ? true
+      : record.tags.toLowerCase().includes(arrCheckboxes[i].toLowerCase()) ? true
+      : record.attire.toLowerCase() === arrCheckboxes[i].toLowerCase() ? true
+      : null
     })
     i++
   }
