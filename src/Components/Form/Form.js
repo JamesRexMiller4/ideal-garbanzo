@@ -73,7 +73,7 @@ const Form = ({ data, results, resetResults, setFilteredResults }) => {
         <div className='select-state-div'>
           <label htmlFor='select-state'>Filter by State</label>
           <select id='select-state' name='select'
-            onChange={(e) => setFilteredResults(results, e.target.value, query)}>
+            onChange={(e) => setFilteredResults(data, e.target.value, query)}>
               {generateStateOptions()}
           </select>
         </div>
