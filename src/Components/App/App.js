@@ -41,18 +41,15 @@ const App = () => {
   const resetResults = (setQuery) => {
     setResults(alphabatizeResults(data));
     setQuery('');
+    document.querySelector('#select-state').value = "";
   };
 
   const setFilteredResults = (resultsData, selectedState, query) => {
 
     const filterByState = (selectedState, states=stateAbbreviations) => {
-      console.log(selectedState)
-      
-      const selectedAbbrv = states[selectedState]
-      console.log(selectedAbbrv)
+      const selectedAbbrv = states[selectedState];
       const stateData = resultsData.filter(result => result.state === selectedAbbrv && result);
-      console.log(stateData);
-      return stateData
+      return stateData;
     };
 
     const filterByQuery = () => {
