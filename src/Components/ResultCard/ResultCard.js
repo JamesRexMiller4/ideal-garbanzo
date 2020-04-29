@@ -9,6 +9,11 @@ const ResultCard = ({result}) => {
     return splitUpGenres.map(genre => <button key={genre} className='genre-tag-btn'>{genre}</button>);
   };
 
+  const generateHoursOfOperation = (hours) => {
+    let splitUpHours = hours.split(';');
+    return splitUpHours.map(hour => <h5>{hour}</h5>)
+  }
+
 
   return ( 
     <article onClick={() => setActive(!active)}>
@@ -35,6 +40,10 @@ const ResultCard = ({result}) => {
             <div>
               <h4>Phone:</h4>
               <h5>{result.telephone}</h5>
+            </div>
+            <div className='hours-div'>
+              <h4>Hours of Operation:</h4>
+              {generateHoursOfOperation(result.hours)}
             </div>
             <div className='tags-container-div'>
               <h4>Tags:</h4>

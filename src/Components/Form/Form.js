@@ -1,18 +1,22 @@
 import React, { useState } from 'react';
 import './Form.scss';
 import utilData from '../../data/utilData.js';
+import close from '../../icons/close.svg';
+import search from '../../icons/search.svg';
+import downArrow from '../../icons/downArrow.svg';
+import upArrow from '../../icons/upArrow.svg';
 
 const Form = ({ data, results, resetResults, setFilteredResults }) => {
   const [ query, setQuery ] = useState('');
   const [ advancedSearch, setAdvancedSearch ] = useState(false);
 
   const handleChange = (e) => {
-    setQuery(e.target.value)
+    setQuery(e.target.value);
   };
 
   const handleClick = (e) => {
-    setAdvancedSearch(!advancedSearch)
-  }
+    setAdvancedSearch(!advancedSearch);
+  };
 
   const generateStateOptions = () => {
     return utilData["states"].map((state, index) => {
@@ -48,55 +52,54 @@ const Form = ({ data, results, resetResults, setFilteredResults }) => {
 
     const recursivelyGenerateFieldsets = (parent, objKeyValue) => { 
       if (typeof parent[objKeyValue] === 'string') {
-        return makeACheckbox(parent[objKeyValue], parent)
+        return makeACheckbox(parent[objKeyValue], parent);
       }
       if (Array.isArray(parent[objKeyValue]) && objKeyValue !== 'states') {
-        return makeFieldsets(parent, objKeyValue)
+        return makeFieldsets(parent, objKeyValue);
       }
 
-      const newParent = parent[objKeyValue]
-      const keys = Object.keys(newParent)
-      return keys.forEach(key => recursivelyGenerateFieldsets(newParent, key))
+      const newParent = parent[objKeyValue];
+      const keys = Object.keys(newParent);
+      return keys.forEach(key => recursivelyGenerateFieldsets(newParent, key));
     };
 
-
     const legends = Object.keys(utilData);
-
-    return legends.map(key => recursivelyGenerateFieldsets(utilData, key))
+    return legends.map(key => recursivelyGenerateFieldsets(utilData, key));
   };
 
   return (
-      <form className='main-form'>
-        <section className='regular-search-section'>
-            <div className='select-state-div'>
-              <label htmlFor='select-state'>Filter by State</label>
-              <select id='select-state' name='select' 
-                onChange={(e) => setFilteredResults(results, 
-                  e.target.value, query)}>
-                  {generateStateOptions()}
-              </select>
-            </div>
-          <div className='search-bar-div'>
-            <input id='search-bar' type='text' value={query} 
-            placeholder="Search Bar" onChange={handleChange}/>
-            <button type='button' onClick={() => resetResults(setQuery)}>X</button>
-            <button type='button' onClick={setFilteredResults({
-              results: results,
-              selectedState: null, 
-              query: query})}>Search</button>
-          </div>
-          <div className='advanced-search-div'>
-            <h3>Advanced Search</h3>
-            <button id='advanced-search-btn' type='button' 
-            onClick={handleClick}>{advancedSearch ? "-" : "+" }</button>
-          </div>
-        </section>
-        <section className='advanced-search-section'>
-          <div className={advancedSearch ? 'filters-fieldsets-div exposed' : 'filters-fieldsets-div'}>
-            {advancedSearch && advancedSearchFilters()}
-          </div>
-        </section>
-      </form> 
+    <form className='main-form'>
+      <section className='regular-search-section'>
+        <div className='select-state-div'>
+          <label htmlFor='select-state'>Filter by State</label>
+          <select id='select-state' name='select' 
+            onChange={(e) => setFilteredResults(results, 
+              e.target.value, query)}>
+              {generateStateOptions()}
+          </select>
+        </div>
+        <div className='search-bar-div'>
+          <input id='search-bar' type='text' value={query} 
+          placeholder="Search Bar" onChange={handleChange}/>
+          <img className="clear-icon" src={close} alt="clear" onClick={() => resetResults(setQuery)} />
+          <img className="search-icon"src={search} alt="search" onClick={setFilteredResults({
+            results: results,
+            selectedState: null, 
+            query: query})} />
+        </div>
+        <div className='advanced-search-div'>
+          <h3>Advanced Search</h3>
+          <img id='advanced-search-btn' src={advancedSearch ? upArrow : downArrow } 
+          alt={advancedSearch ? "collapse" : "expand" }
+          onClick={handleClick} />
+        </div>
+      </section>
+      <section className='advanced-search-section'>
+        <div className={advancedSearch ? 'filters-fieldsets-div exposed' : 'filters-fieldsets-div'}>
+          {advancedSearch && advancedSearchFilters()}
+        </div>
+      </section>
+    </form> 
   );
 }
 
