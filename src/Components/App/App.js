@@ -5,12 +5,13 @@ import Form from '../Form/Form';
 import ResultsContainer from '../ResultsContainer/ResultsContainer';
 import Footer from '../Footer/Footer';
 import { getData } from '../../apiCalls/apiCalls.js';
-import { alphabatizeResults } from '../../utils/utilFunctions.js';
+import * as utilFunctions from '../../utils/utilFunctions.js';
 
 const App = () => {
   const [ data, setData ] = useState([]);
   const [ error, setError ] = useState('');  
   const [ results, setResults ] = useState([]);
+  const [ page, setPage ] = useState(1);
   
   useEffect(() => {
     getData().then(data => {
@@ -23,7 +24,7 @@ const App = () => {
           state: restaurant["state"],
           zip: restaurant["zip"],
           telephone: restaurant["telephone"],
-          tags: [...new Set(restaurant["tags"])],
+          tags: restaurant["tags"],
           website: restaurant["website"],
           genre: restaurant["genre"],
           hours: restaurant["hours"],
@@ -32,56 +33,26 @@ const App = () => {
       });
       
       setData(cleanedData)
-      setResults(alphabatizeResults(data))
+      setResults(utilFunctions.alphabatizeResults(data))
     })
     .catch(error => setError(error))
   }, []);
 
-  const resetResults = (setQuery) => {
-    setResults(alphabatizeResults(data));
+  const resetResults = (setQuery, setSelectedState, setCheckedBoxes) => {
+    setResults(utilFunctions.alphabatizeResults(data));
     setQuery('');
+    setSelectedState('');
+    setCheckedBoxes([]);
   };
 
-  const setFilteredResults = (resultsData, selectedState, query) => {
+  const setFilteredResults = (resultsData, query, selectedState, states, checkedBoxes) => {
+    if (selectedState === "" && query === "" && checkedBoxes.length === 0) setResults(utilFunctions.alphabatizeResults(resultsData));
 
-    const filterByState = () => {
-      return resultsData.filter(result => {
-        if (selectedState) {
-          return (result.state === selectedState);
-        }
-        return false;
-      });
-    };
-
-    const filterByQuery = () => {
-      const filterByGenre = () => {
-        return resultsData.filter(result => result.genres.includes(query));
-      };
-
-      const filterByName = (filteredResults => {
-        return filteredResults.filter(result => {
-          let name = results.name.toLowerCase();
-          let string = query.toLowerCase();
-          return name.includes(string);
-        });
-      });
-
-      const filterByCity = (filteredResults=> {
-        return filteredResults.filter(result => {
-          let city = result.city.toLowerCase();
-          let string = query.toLowerCase();
-          return city.includes(string);
-        });
-      });
-
-      let newResults = [...filterByName([...filterByGenre(query)])];
-      newResults = [...filterByCity(newResults)];
-      return newResults;
-    };
-
-    if (selectedState) setResults(filterByState(selectedState));
-    if (query) setResults([...filterByQuery()]);
-    return;
+    let filteredResults = utilFunctions.filterByState(resultsData, selectedState, states);
+    filteredResults = utilFunctions.filterByQuery(filteredResults, query);
+    filteredResults = utilFunctions.filterByCheckboxes(filteredResults, checkedBoxes);
+    
+    setResults(filteredResults);
   };
 
   return (
@@ -89,10 +60,9 @@ const App = () => {
       <Header />
       <Form 
         data={data}
-        results={results}
         resetResults={resetResults}
         setFilteredResults={setFilteredResults}/>
-      { data ? <ResultsContainer results={results}/> 
+      { data ? <ResultsContainer page={page} setPage={setPage} results={results}/> 
         : <h2>{error}</h2> }
       <Footer />
     </div>

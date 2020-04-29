@@ -4,11 +4,15 @@ import ResultsContainer from './ResultsContainer';
 import mockData from '../../data/mockData';
  
 describe('ResultsContainer', () => {
-  let wrapper, largerMockData;
+  let wrapper, largerMockData, mockSetPage;
  
   beforeEach(() => {
-    largerMockData = [...mockData, ...mockData, ...mockData]
-    wrapper = shallow(<ResultsContainer results={largerMockData}/>)
+    largerMockData = [...mockData, ...mockData, ...mockData];
+    mockSetPage = jest.fn();
+    wrapper = shallow(<ResultsContainer 
+      page={1}
+      setPage={mockSetPage}
+      results={largerMockData}/>)
   })
  
   it('should render the snapshot', () => {
