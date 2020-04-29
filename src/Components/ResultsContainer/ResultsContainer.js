@@ -31,9 +31,9 @@ const ResultsContainer = ({results}) => {
   return ( 
     <section className="results-container-section">
       <div className='results-pagination-div'>
-        <img onClick={() => updateCurrentPage(page, -1)} src={leftArrow} alt="previous-results"/>
+        <img id="left-arrow" onClick={() => updateCurrentPage(page, -1)} src={leftArrow} alt="previous-results"/>
         <h2>{"Showing " + page + " of " + (Math.round(results.length / 10))}</h2>
-        <img onClick={() => updateCurrentPage(page, 1)} src={next} alt="more-results"/>
+        <img id="right-arrow" onClick={() => updateCurrentPage(page, 1)} src={next} alt="more-results"/>
       </div>
         {resultCards}
     </section>

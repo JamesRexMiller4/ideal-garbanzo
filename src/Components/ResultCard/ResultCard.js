@@ -6,7 +6,7 @@ const ResultCard = ({result}) => {
 
   const generateGenreTags = (genres) => {
     let splitUpGenres = genres.split(',');
-    return splitUpGenres.map(genre => <button className='genre-tag-btn'>{genre}</button>);
+    return splitUpGenres.map(genre => <button key={genre} className='genre-tag-btn'>{genre}</button>);
   };
 
 
@@ -15,9 +15,7 @@ const ResultCard = ({result}) => {
       <section className='result-card-section'>
         <div>
           <h3 className='result-card-h3'>{result.name}</h3>
-          <div>
-            <h4><span>{result.city + ', ' + result.state}</span></h4>
-          </div>
+          <h4>{result.city + ', ' + result.state}</h4>
           <h3>{result.phone}</h3>
         </div>
         <div>
