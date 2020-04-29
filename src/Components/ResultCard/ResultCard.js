@@ -36,6 +36,10 @@ const ResultCard = ({result}) => {
               <h4>Phone:</h4>
               <h5>{result.telephone}</h5>
             </div>
+            <div>
+              <h4>Hours of Operation:</h4>
+              <h5>{result.hours}</h5>
+            </div>
             <div className='tags-container-div'>
               <h4>Tags:</h4>
               {generateGenreTags(result.tags)}
