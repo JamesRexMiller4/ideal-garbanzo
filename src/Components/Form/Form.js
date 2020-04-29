@@ -11,6 +11,8 @@ const Form = ({ data, resetResults, setFilteredResults }) => {
   const [ query, setQuery ] = useState('');
   const [ selectedState, setSelectedState ] = useState('');
   const [ advancedSearch, setAdvancedSearch ] = useState(false);
+  const [ checkedBoxes, setCheckedBoxes ] = useState([]);
+
 
   const handleChange = (e) => {
     setQuery(e.target.value);
@@ -19,6 +21,10 @@ const Form = ({ data, resetResults, setFilteredResults }) => {
   const handleClick = (e) => {
     setAdvancedSearch(!advancedSearch);
   };
+
+  const handleCheckBoxClick = (e) => {
+    setCheckedBoxes([...checkedBoxes, e.target.value])
+  }
 
   const handleStateSelection = (e) => {
     setFilteredResults(data, query, e.target.value, stateAbbreviations)
@@ -40,7 +46,8 @@ const Form = ({ data, resetResults, setFilteredResults }) => {
     const makeACheckbox = (val, legend) => {
       return (
         <div key={val + '-div'} className='checkbox-div'>
-          <input key={val} id={val} type="checkbox" name={legend} value={val} />
+          <input key={val} id={val} onClick={(e) => handleCheckBoxClick(e)} 
+          type="checkbox" name={legend} value={val} />
           <label key={val + "-label"} htmlFor={val}>{val}</label>
         </div>)
     };
@@ -63,9 +70,7 @@ const Form = ({ data, resetResults, setFilteredResults }) => {
     };
 
     const recursivelyGenerateFieldsets = (parent, objKeyValue) => { 
-      if (typeof parent[objKeyValue] === 'string') {
-        return makeACheckbox(parent[objKeyValue], parent);
-      }
+      if (typeof parent[objKeyValue] === 'string') return makeACheckbox(parent[objKeyValue], parent);
       if (Array.isArray(parent[objKeyValue]) && objKeyValue !== 'states') {
         return makeFieldsets(parent, objKeyValue);
       }
@@ -110,6 +115,6 @@ const Form = ({ data, resetResults, setFilteredResults }) => {
       </section>
     </form> 
   );
-}
+};
 
 export default Form;

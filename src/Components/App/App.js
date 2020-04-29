@@ -6,7 +6,6 @@ import ResultsContainer from '../ResultsContainer/ResultsContainer';
 import Footer from '../Footer/Footer';
 import { getData } from '../../apiCalls/apiCalls.js';
 import * as utilFunctions from '../../utils/utilFunctions.js';
-// import stateAbbreviations from '../../data/stateAbbreviations.js';
 
 const App = () => {
   const [ data, setData ] = useState([]);
@@ -34,8 +33,7 @@ const App = () => {
       });
       
       setData(cleanedData)
-      const results = utilFunctions.alphabatizeResults(data)
-      setResults(results)
+      setResults(utilFunctions.alphabatizeResults(data))
     })
     .catch(error => setError(error))
   }, []);
@@ -47,28 +45,14 @@ const App = () => {
   };
 
   const setFilteredResults = (resultsData, query, selectedState, states) => {
-    console.log(resultsData)
-    
     if (selectedState !== "" && query !== "") {
       let filteredResults = utilFunctions.filterByState(resultsData, selectedState, states)
       filteredResults = utilFunctions.filterByQuery(filteredResults, query)
-        setResults([...filteredResults])
+      setResults(filteredResults)
     };
-
-    if (query !== "")  {
-        const results = utilFunctions.filterByQuery(resultsData, query)
-        setResults([...results])
-    };
-  
-    if (selectedState !== "") {
-        const results = utilFunctions.filterByState(resultsData, selectedState, states)
-        console.log(results)
-        setResults([...results]);
-    }
-    if (selectedState === "" && query === "") {
-        const results = utilFunctions.alphabatizeResults(resultsData)
-        setResults([...results]);
-    };
+    if (query !== "") setResults(utilFunctions.filterByQuery(resultsData, query));
+    if (selectedState !== "") setResults(utilFunctions.filterByState(resultsData, selectedState, states));
+    if (selectedState === "" && query === "") setResults(utilFunctions.alphabatizeResults(resultsData));
   };
 
   return (
