@@ -19,8 +19,7 @@ const ResultsContainer = ({page, setPage, results}) => {
       currentPage === 1 ? setPage(1) : setPage(page - 1);
     }
     if (incrementor > 0 && currentPage !== TOTALRESULTSLENGTH) {
-      currentPage === TOTALRESULTSLENGTH ? setPage(TOTALRESULTSLENGTH)
-      : setPage(page + 1);
+      currentPage === TOTALRESULTSLENGTH ? setPage(TOTALRESULTSLENGTH) : setPage(page + 1);
     }
   };
 

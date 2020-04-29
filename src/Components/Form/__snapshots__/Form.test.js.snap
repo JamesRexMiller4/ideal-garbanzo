@@ -87,285 +87,11 @@ exports[`Form handleClick: should render a different snapshot if advancedSearch 
     ]
   }
   resetResults={[MockFunction]}
-  results={
-    Array [
-      Object {
-        "address1": "8731 International Dr",
-        "attire": "Casual",
-        "city": "Orlando",
-        "genre": "Seafood,International,American,Oysters,Cafe",
-        "hours": "Mon-Fri 4:00 PM-10:00 PM; Sat-Sun 2:00 PM-10:00 PM",
-        "id": "cd273a24-f8de-44f6-8add-028e22229293",
-        "lat": "28.43897",
-        "long": "-81.470707",
-        "name": "Boston Lobster Feast",
-        "state": "FL",
-        "tags": "Social,Food and Dining,Restaurants,Seafood,Social,Food and Dining,Restaurants,American",
-        "telephone": "(407) 248-8606",
-        "website": "http://www.bostonlobsterfeast.com",
-        "zip": "32819",
-      },
-      Object {
-        "address1": "108 3rd St NE",
-        "attire": "business casual",
-        "city": "Charlottesville",
-        "genre": "French,European,Cafe,Continental,American",
-        "hours": "Mon-Thu 5:30 PM-9:00 PM; Fri-Sat 5:30 PM-10:00 PM",
-        "id": "0f41a3d0-0641-4eef-b7fd-706f083cf0d5",
-        "lat": "38.030526",
-        "long": "-78.479785",
-        "name": "Fleurie Restaurant",
-        "state": "VA",
-        "tags": "Social,Food and Dining,Restaurants,French",
-        "telephone": "(434) 971-7800",
-        "website": "http://www.fleurierestaurant.com",
-        "zip": "22902",
-      },
-      Object {
-        "address1": "303 E Main St",
-        "attire": "business casual",
-        "city": "Aspen",
-        "genre": "Japanese,Sushi,Asian,Contemporary,Seafood",
-        "hours": "Open Daily 5:30 PM-9:00 PM",
-        "id": "00b35e1a-82b1-4988-b8b9-6df826db2818",
-        "lat": "39.190723",
-        "long": "-106.82031",
-        "name": "Matsuhisa",
-        "state": "CO",
-        "tags": "Social,Food and Dining,Restaurants,Japanese,Social,Food and Dining,Restaurants,Sushi",
-        "telephone": "(970) 544-6628",
-        "website": "http://www.matsuhisaaspen.com",
-        "zip": "81611",
-      },
-      Object {
-        "address1": "201 Waterfront St",
-        "attire": "business casual",
-        "city": "Oxon Hill",
-        "genre": "Steak,American,Contemporary,Seafood,Cafe",
-        "hours": "Open Daily 5:30 PM-10:00 PM",
-        "id": "f223fdd0-4adc-423e-9747-980a66c256ca",
-        "lat": "38.782098",
-        "long": "-77.017492",
-        "name": "Old Hickory Steakhouse",
-        "state": "MD",
-        "tags": "Social,Food and Dining,Restaurants,Steakhouses",
-        "telephone": "(301) 965-4000",
-        "website": "http://www.gaylordnational.com",
-        "zip": "20745",
-      },
-      Object {
-        "address1": "500 Crescent Ct",
-        "attire": "business casual",
-        "city": "Dallas",
-        "genre": "Steak,American",
-        "hours": "Mon-Thu 11:00 AM-10:00 PM; Fri 11:00 AM-11:00 PM; Sat 5:00 PM-11:00 PM; Sun 5:00 PM-9:00 PM",
-        "id": "0b4bfe46-3e60-4de4-82ba-2dd8e5d46b56",
-        "lat": "32.794749",
-        "long": "-96.804099",
-        "name": "The Capital Grille",
-        "state": "TX",
-        "tags": "Social,Food and Dining,Restaurants,Steakhouses,Social,Food and Dining,Restaurants,American",
-        "telephone": "(214) 303-0500",
-        "website": "http://www.thecapitalgrille.com",
-        "zip": "75201",
-      },
-    ]
-  }
-  setFilteredResults={
-    [MockFunction] {
-      "calls": Array [
-        Array [
-          Object {
-            "query": "",
-            "results": Array [
-              Object {
-                "address1": "8731 International Dr",
-                "attire": "Casual",
-                "city": "Orlando",
-                "genre": "Seafood,International,American,Oysters,Cafe",
-                "hours": "Mon-Fri 4:00 PM-10:00 PM; Sat-Sun 2:00 PM-10:00 PM",
-                "id": "cd273a24-f8de-44f6-8add-028e22229293",
-                "lat": "28.43897",
-                "long": "-81.470707",
-                "name": "Boston Lobster Feast",
-                "state": "FL",
-                "tags": "Social,Food and Dining,Restaurants,Seafood,Social,Food and Dining,Restaurants,American",
-                "telephone": "(407) 248-8606",
-                "website": "http://www.bostonlobsterfeast.com",
-                "zip": "32819",
-              },
-              Object {
-                "address1": "108 3rd St NE",
-                "attire": "business casual",
-                "city": "Charlottesville",
-                "genre": "French,European,Cafe,Continental,American",
-                "hours": "Mon-Thu 5:30 PM-9:00 PM; Fri-Sat 5:30 PM-10:00 PM",
-                "id": "0f41a3d0-0641-4eef-b7fd-706f083cf0d5",
-                "lat": "38.030526",
-                "long": "-78.479785",
-                "name": "Fleurie Restaurant",
-                "state": "VA",
-                "tags": "Social,Food and Dining,Restaurants,French",
-                "telephone": "(434) 971-7800",
-                "website": "http://www.fleurierestaurant.com",
-                "zip": "22902",
-              },
-              Object {
-                "address1": "303 E Main St",
-                "attire": "business casual",
-                "city": "Aspen",
-                "genre": "Japanese,Sushi,Asian,Contemporary,Seafood",
-                "hours": "Open Daily 5:30 PM-9:00 PM",
-                "id": "00b35e1a-82b1-4988-b8b9-6df826db2818",
-                "lat": "39.190723",
-                "long": "-106.82031",
-                "name": "Matsuhisa",
-                "state": "CO",
-                "tags": "Social,Food and Dining,Restaurants,Japanese,Social,Food and Dining,Restaurants,Sushi",
-                "telephone": "(970) 544-6628",
-                "website": "http://www.matsuhisaaspen.com",
-                "zip": "81611",
-              },
-              Object {
-                "address1": "201 Waterfront St",
-                "attire": "business casual",
-                "city": "Oxon Hill",
-                "genre": "Steak,American,Contemporary,Seafood,Cafe",
-                "hours": "Open Daily 5:30 PM-10:00 PM",
-                "id": "f223fdd0-4adc-423e-9747-980a66c256ca",
-                "lat": "38.782098",
-                "long": "-77.017492",
-                "name": "Old Hickory Steakhouse",
-                "state": "MD",
-                "tags": "Social,Food and Dining,Restaurants,Steakhouses",
-                "telephone": "(301) 965-4000",
-                "website": "http://www.gaylordnational.com",
-                "zip": "20745",
-              },
-              Object {
-                "address1": "500 Crescent Ct",
-                "attire": "business casual",
-                "city": "Dallas",
-                "genre": "Steak,American",
-                "hours": "Mon-Thu 11:00 AM-10:00 PM; Fri 11:00 AM-11:00 PM; Sat 5:00 PM-11:00 PM; Sun 5:00 PM-9:00 PM",
-                "id": "0b4bfe46-3e60-4de4-82ba-2dd8e5d46b56",
-                "lat": "32.794749",
-                "long": "-96.804099",
-                "name": "The Capital Grille",
-                "state": "TX",
-                "tags": "Social,Food and Dining,Restaurants,Steakhouses,Social,Food and Dining,Restaurants,American",
-                "telephone": "(214) 303-0500",
-                "website": "http://www.thecapitalgrille.com",
-                "zip": "75201",
-              },
-            ],
-            "selectedState": null,
-          },
-        ],
-        Array [
-          Object {
-            "query": "",
-            "results": Array [
-              Object {
-                "address1": "8731 International Dr",
-                "attire": "Casual",
-                "city": "Orlando",
-                "genre": "Seafood,International,American,Oysters,Cafe",
-                "hours": "Mon-Fri 4:00 PM-10:00 PM; Sat-Sun 2:00 PM-10:00 PM",
-                "id": "cd273a24-f8de-44f6-8add-028e22229293",
-                "lat": "28.43897",
-                "long": "-81.470707",
-                "name": "Boston Lobster Feast",
-                "state": "FL",
-                "tags": "Social,Food and Dining,Restaurants,Seafood,Social,Food and Dining,Restaurants,American",
-                "telephone": "(407) 248-8606",
-                "website": "http://www.bostonlobsterfeast.com",
-                "zip": "32819",
-              },
-              Object {
-                "address1": "108 3rd St NE",
-                "attire": "business casual",
-                "city": "Charlottesville",
-                "genre": "French,European,Cafe,Continental,American",
-                "hours": "Mon-Thu 5:30 PM-9:00 PM; Fri-Sat 5:30 PM-10:00 PM",
-                "id": "0f41a3d0-0641-4eef-b7fd-706f083cf0d5",
-                "lat": "38.030526",
-                "long": "-78.479785",
-                "name": "Fleurie Restaurant",
-                "state": "VA",
-                "tags": "Social,Food and Dining,Restaurants,French",
-                "telephone": "(434) 971-7800",
-                "website": "http://www.fleurierestaurant.com",
-                "zip": "22902",
-              },
-              Object {
-                "address1": "303 E Main St",
-                "attire": "business casual",
-                "city": "Aspen",
-                "genre": "Japanese,Sushi,Asian,Contemporary,Seafood",
-                "hours": "Open Daily 5:30 PM-9:00 PM",
-                "id": "00b35e1a-82b1-4988-b8b9-6df826db2818",
-                "lat": "39.190723",
-                "long": "-106.82031",
-                "name": "Matsuhisa",
-                "state": "CO",
-                "tags": "Social,Food and Dining,Restaurants,Japanese,Social,Food and Dining,Restaurants,Sushi",
-                "telephone": "(970) 544-6628",
-                "website": "http://www.matsuhisaaspen.com",
-                "zip": "81611",
-              },
-              Object {
-                "address1": "201 Waterfront St",
-                "attire": "business casual",
-                "city": "Oxon Hill",
-                "genre": "Steak,American,Contemporary,Seafood,Cafe",
-                "hours": "Open Daily 5:30 PM-10:00 PM",
-                "id": "f223fdd0-4adc-423e-9747-980a66c256ca",
-                "lat": "38.782098",
-                "long": "-77.017492",
-                "name": "Old Hickory Steakhouse",
-                "state": "MD",
-                "tags": "Social,Food and Dining,Restaurants,Steakhouses",
-                "telephone": "(301) 965-4000",
-                "website": "http://www.gaylordnational.com",
-                "zip": "20745",
-              },
-              Object {
-                "address1": "500 Crescent Ct",
-                "attire": "business casual",
-                "city": "Dallas",
-                "genre": "Steak,American",
-                "hours": "Mon-Thu 11:00 AM-10:00 PM; Fri 11:00 AM-11:00 PM; Sat 5:00 PM-11:00 PM; Sun 5:00 PM-9:00 PM",
-                "id": "0b4bfe46-3e60-4de4-82ba-2dd8e5d46b56",
-                "lat": "32.794749",
-                "long": "-96.804099",
-                "name": "The Capital Grille",
-                "state": "TX",
-                "tags": "Social,Food and Dining,Restaurants,Steakhouses,Social,Food and Dining,Restaurants,American",
-                "telephone": "(214) 303-0500",
-                "website": "http://www.thecapitalgrille.com",
-                "zip": "75201",
-              },
-            ],
-            "selectedState": null,
-          },
-        ],
-      ],
-      "results": Array [
-        Object {
-          "type": "return",
-          "value": undefined,
-        },
-        Object {
-          "type": "return",
-          "value": undefined,
-        },
-      ],
-    }
-  }
+  setFilteredResults={[MockFunction]}
 >
   <form
     className="main-form"
+    onSubmit={[Function]}
   >
     <section
       className="regular-search-section"
@@ -382,359 +108,360 @@ exports[`Form handleClick: should render a different snapshot if advancedSearch 
           id="select-state"
           name="select"
           onChange={[Function]}
+          value=""
         >
           <option
-            id={0}
+            id=""
             key=""
-            value={0}
+            value=""
           />
           <option
-            id={1}
+            id="Alabama"
             key="Alabama"
-            value={1}
+            value="Alabama"
           >
             Alabama
           </option>
           <option
-            id={2}
+            id="Alaska"
             key="Alaska"
-            value={2}
+            value="Alaska"
           >
             Alaska
           </option>
           <option
-            id={3}
+            id="Arizona"
             key="Arizona"
-            value={3}
+            value="Arizona"
           >
             Arizona
           </option>
           <option
-            id={4}
+            id="Arkansas"
             key="Arkansas"
-            value={4}
+            value="Arkansas"
           >
             Arkansas
           </option>
           <option
-            id={5}
+            id="California"
             key="California"
-            value={5}
+            value="California"
           >
             California
           </option>
           <option
-            id={6}
+            id="Colorado"
             key="Colorado"
-            value={6}
+            value="Colorado"
           >
             Colorado
           </option>
           <option
-            id={7}
+            id="Connecticut"
             key="Connecticut"
-            value={7}
+            value="Connecticut"
           >
             Connecticut
           </option>
           <option
-            id={8}
+            id="Delaware"
             key="Delaware"
-            value={8}
+            value="Delaware"
           >
             Delaware
           </option>
           <option
-            id={9}
+            id="Florida"
             key="Florida"
-            value={9}
+            value="Florida"
           >
             Florida
           </option>
           <option
-            id={10}
+            id="Georgia"
             key="Georgia"
-            value={10}
+            value="Georgia"
           >
             Georgia
           </option>
           <option
-            id={11}
+            id="Hawaii"
             key="Hawaii"
-            value={11}
+            value="Hawaii"
           >
             Hawaii
           </option>
           <option
-            id={12}
+            id="Idaho"
             key="Idaho"
-            value={12}
+            value="Idaho"
           >
             Idaho
           </option>
           <option
-            id={13}
+            id="Illinois"
             key="Illinois"
-            value={13}
+            value="Illinois"
           >
             Illinois
           </option>
           <option
-            id={14}
+            id="Indiana"
             key="Indiana"
-            value={14}
+            value="Indiana"
           >
             Indiana
           </option>
           <option
-            id={15}
+            id="Iowa"
             key="Iowa"
-            value={15}
+            value="Iowa"
           >
             Iowa
           </option>
           <option
-            id={16}
+            id="Kansas"
             key="Kansas"
-            value={16}
+            value="Kansas"
           >
             Kansas
           </option>
           <option
-            id={17}
+            id="Kentucky"
             key="Kentucky"
-            value={17}
+            value="Kentucky"
           >
             Kentucky
           </option>
           <option
-            id={18}
+            id="Louisiana"
             key="Louisiana"
-            value={18}
+            value="Louisiana"
           >
             Louisiana
           </option>
           <option
-            id={19}
+            id="Maine"
             key="Maine"
-            value={19}
+            value="Maine"
           >
             Maine
           </option>
           <option
-            id={20}
+            id="Maryland"
             key="Maryland"
-            value={20}
+            value="Maryland"
           >
             Maryland
           </option>
           <option
-            id={21}
+            id="Massachusetts"
             key="Massachusetts"
-            value={21}
+            value="Massachusetts"
           >
             Massachusetts
           </option>
           <option
-            id={22}
+            id="Michigan"
             key="Michigan"
-            value={22}
+            value="Michigan"
           >
             Michigan
           </option>
           <option
-            id={23}
+            id="Minnesota"
             key="Minnesota"
-            value={23}
+            value="Minnesota"
           >
             Minnesota
           </option>
           <option
-            id={24}
+            id="Mississippi"
             key="Mississippi"
-            value={24}
+            value="Mississippi"
           >
             Mississippi
           </option>
           <option
-            id={25}
+            id="Missouri"
             key="Missouri"
-            value={25}
+            value="Missouri"
           >
             Missouri
           </option>
           <option
-            id={26}
+            id="Montana"
             key="Montana"
-            value={26}
+            value="Montana"
           >
             Montana
           </option>
           <option
-            id={27}
+            id="Nebraska"
             key="Nebraska"
-            value={27}
+            value="Nebraska"
           >
             Nebraska
           </option>
           <option
-            id={28}
+            id="Nevada"
             key="Nevada"
-            value={28}
+            value="Nevada"
           >
             Nevada
           </option>
           <option
-            id={29}
+            id="New Hampshire"
             key="New Hampshire"
-            value={29}
+            value="New Hampshire"
           >
             New Hampshire
           </option>
           <option
-            id={30}
+            id="New Jersey"
             key="New Jersey"
-            value={30}
+            value="New Jersey"
           >
             New Jersey
           </option>
           <option
-            id={31}
+            id="New Mexico"
             key="New Mexico"
-            value={31}
+            value="New Mexico"
           >
             New Mexico
           </option>
           <option
-            id={32}
+            id="New York"
             key="New York"
-            value={32}
+            value="New York"
           >
             New York
           </option>
           <option
-            id={33}
+            id="North Carolina"
             key="North Carolina"
-            value={33}
+            value="North Carolina"
           >
             North Carolina
           </option>
           <option
-            id={34}
+            id="North Dakota"
             key="North Dakota"
-            value={34}
+            value="North Dakota"
           >
             North Dakota
           </option>
           <option
-            id={35}
+            id="Ohio"
             key="Ohio"
-            value={35}
+            value="Ohio"
           >
             Ohio
           </option>
           <option
-            id={36}
+            id="Oklahoma"
             key="Oklahoma"
-            value={36}
+            value="Oklahoma"
           >
             Oklahoma
           </option>
           <option
-            id={37}
+            id="Oregon"
             key="Oregon"
-            value={37}
+            value="Oregon"
           >
             Oregon
           </option>
           <option
-            id={38}
+            id="Pennsylvania"
             key="Pennsylvania"
-            value={38}
+            value="Pennsylvania"
           >
             Pennsylvania
           </option>
           <option
-            id={39}
+            id="Rhode Island"
             key="Rhode Island"
-            value={39}
+            value="Rhode Island"
           >
             Rhode Island
           </option>
           <option
-            id={40}
+            id="South Carolina"
             key="South Carolina"
-            value={40}
+            value="South Carolina"
           >
             South Carolina
           </option>
           <option
-            id={41}
+            id="South Dakota"
             key="South Dakota"
-            value={41}
+            value="South Dakota"
           >
             South Dakota
           </option>
           <option
-            id={42}
+            id="Tennessee"
             key="Tennessee"
-            value={42}
+            value="Tennessee"
           >
             Tennessee
           </option>
           <option
-            id={43}
+            id="Texas"
             key="Texas"
-            value={43}
+            value="Texas"
           >
             Texas
           </option>
           <option
-            id={44}
+            id="Utah"
             key="Utah"
-            value={44}
+            value="Utah"
           >
             Utah
           </option>
           <option
-            id={45}
+            id="Vermont"
             key="Vermont"
-            value={45}
+            value="Vermont"
           >
             Vermont
           </option>
           <option
-            id={46}
+            id="Virginia"
             key="Virginia"
-            value={46}
+            value="Virginia"
           >
             Virginia
           </option>
           <option
-            id={47}
+            id="Washington"
             key="Washington"
-            value={47}
+            value="Washington"
           >
             Washington
           </option>
           <option
-            id={48}
+            id="West Virginia"
             key="West Virginia"
-            value={48}
+            value="West Virginia"
           >
             West Virginia
           </option>
           <option
-            id={49}
+            id="Wisconsin"
             key="Wisconsin"
-            value={49}
+            value="Wisconsin"
           >
             Wisconsin
           </option>
           <option
-            id={50}
+            id="Wyoming"
             key="Wyoming"
-            value={50}
+            value="Wyoming"
           >
             Wyoming
           </option>
@@ -750,17 +477,18 @@ exports[`Form handleClick: should render a different snapshot if advancedSearch 
           type="text"
           value=""
         />
-        <button
+        <img
+          alt="clear"
+          className="clear-icon"
           onClick={[Function]}
-          type="button"
-        >
-          X
-        </button>
-        <button
-          type="button"
-        >
-          Search
-        </button>
+          src="close.svg"
+        />
+        <img
+          alt="search"
+          className="search-icon"
+          onClick={[Function]}
+          src="search.svg"
+        />
       </div>
       <div
         className="advanced-search-div"
@@ -768,13 +496,12 @@ exports[`Form handleClick: should render a different snapshot if advancedSearch 
         <h3>
           Advanced Search
         </h3>
-        <button
+        <img
+          alt="collapse"
           id="advanced-search-btn"
           onClick={[Function]}
-          type="button"
-        >
-          -
-        </button>
+          src="upArrow.svg"
+        />
       </div>
     </section>
     <section
@@ -799,9 +526,11 @@ exports[`Form handleClick: should render a different snapshot if advancedSearch 
                 key="Kosher-div"
               >
                 <input
+                  className="checkbox"
                   id="Kosher"
                   key="Kosher"
                   name="Food"
+                  onClick={[Function]}
                   type="checkbox"
                   value="Kosher"
                 />
@@ -817,9 +546,11 @@ exports[`Form handleClick: should render a different snapshot if advancedSearch 
                 key="Oysters-div"
               >
                 <input
+                  className="checkbox"
                   id="Oysters"
                   key="Oysters"
                   name="Food"
+                  onClick={[Function]}
                   type="checkbox"
                   value="Oysters"
                 />
@@ -835,9 +566,11 @@ exports[`Form handleClick: should render a different snapshot if advancedSearch 
                 key="Pasta-div"
               >
                 <input
+                  className="checkbox"
                   id="Pasta"
                   key="Pasta"
                   name="Food"
+                  onClick={[Function]}
                   type="checkbox"
                   value="Pasta"
                 />
@@ -853,9 +586,11 @@ exports[`Form handleClick: should render a different snapshot if advancedSearch 
                 key="Sandwiches-div"
               >
                 <input
+                  className="checkbox"
                   id="Sandwiches"
                   key="Sandwiches"
                   name="Food"
+                  onClick={[Function]}
                   type="checkbox"
                   value="Sandwiches"
                 />
@@ -871,9 +606,11 @@ exports[`Form handleClick: should render a different snapshot if advancedSearch 
                 key="Seafood-div"
               >
                 <input
+                  className="checkbox"
                   id="Seafood"
                   key="Seafood"
                   name="Food"
+                  onClick={[Function]}
                   type="checkbox"
                   value="Seafood"
                 />
@@ -889,9 +626,11 @@ exports[`Form handleClick: should render a different snapshot if advancedSearch 
                 key="Steak-div"
               >
                 <input
+                  className="checkbox"
                   id="Steak"
                   key="Steak"
                   name="Food"
+                  onClick={[Function]}
                   type="checkbox"
                   value="Steak"
                 />
@@ -907,9 +646,11 @@ exports[`Form handleClick: should render a different snapshot if advancedSearch 
                 key="Sushi-div"
               >
                 <input
+                  className="checkbox"
                   id="Sushi"
                   key="Sushi"
                   name="Food"
+                  onClick={[Function]}
                   type="checkbox"
                   value="Sushi"
                 />
@@ -925,9 +666,11 @@ exports[`Form handleClick: should render a different snapshot if advancedSearch 
                 key="Vegetarian-div"
               >
                 <input
+                  className="checkbox"
                   id="Vegetarian"
                   key="Vegetarian"
                   name="Food"
+                  onClick={[Function]}
                   type="checkbox"
                   value="Vegetarian"
                 />
@@ -957,9 +700,11 @@ exports[`Form handleClick: should render a different snapshot if advancedSearch 
                 key="Bakery-div"
               >
                 <input
+                  className="checkbox"
                   id="Bakery"
                   key="Bakery"
                   name="Types"
+                  onClick={[Function]}
                   type="checkbox"
                   value="Bakery"
                 />
@@ -975,9 +720,11 @@ exports[`Form handleClick: should render a different snapshot if advancedSearch 
                 key="Bistro-div"
               >
                 <input
+                  className="checkbox"
                   id="Bistro"
                   key="Bistro"
                   name="Types"
+                  onClick={[Function]}
                   type="checkbox"
                   value="Bistro"
                 />
@@ -993,9 +740,11 @@ exports[`Form handleClick: should render a different snapshot if advancedSearch 
                 key="Cafe-div"
               >
                 <input
+                  className="checkbox"
                   id="Cafe"
                   key="Cafe"
                   name="Types"
+                  onClick={[Function]}
                   type="checkbox"
                   value="Cafe"
                 />
@@ -1011,9 +760,11 @@ exports[`Form handleClick: should render a different snapshot if advancedSearch 
                 key="Grill-div"
               >
                 <input
+                  className="checkbox"
                   id="Grill"
                   key="Grill"
                   name="Types"
+                  onClick={[Function]}
                   type="checkbox"
                   value="Grill"
                 />
@@ -1043,9 +794,11 @@ exports[`Form handleClick: should render a different snapshot if advancedSearch 
                 key="Fusion-div"
               >
                 <input
+                  className="checkbox"
                   id="Fusion"
                   key="Fusion"
                   name="Styles"
+                  onClick={[Function]}
                   type="checkbox"
                   value="Fusion"
                 />
@@ -1061,9 +814,11 @@ exports[`Form handleClick: should render a different snapshot if advancedSearch 
                 key="Traditional-div"
               >
                 <input
+                  className="checkbox"
                   id="Traditional"
                   key="Traditional"
                   name="Styles"
+                  onClick={[Function]}
                   type="checkbox"
                   value="Traditional"
                 />
@@ -1079,9 +834,11 @@ exports[`Form handleClick: should render a different snapshot if advancedSearch 
                 key="Contemporary-div"
               >
                 <input
+                  className="checkbox"
                   id="Contemporary"
                   key="Contemporary"
                   name="Styles"
+                  onClick={[Function]}
                   type="checkbox"
                   value="Contemporary"
                 />
@@ -1097,9 +854,11 @@ exports[`Form handleClick: should render a different snapshot if advancedSearch 
                 key="Eclectic-div"
               >
                 <input
+                  className="checkbox"
                   id="Eclectic"
                   key="Eclectic"
                   name="Styles"
+                  onClick={[Function]}
                   type="checkbox"
                   value="Eclectic"
                 />
@@ -1129,9 +888,11 @@ exports[`Form handleClick: should render a different snapshot if advancedSearch 
                 key="Coffee-div"
               >
                 <input
+                  className="checkbox"
                   id="Coffee"
                   key="Coffee"
                   name="Drinks"
+                  onClick={[Function]}
                   type="checkbox"
                   value="Coffee"
                 />
@@ -1147,9 +908,11 @@ exports[`Form handleClick: should render a different snapshot if advancedSearch 
                 key="Tea-div"
               >
                 <input
+                  className="checkbox"
                   id="Tea"
                   key="Tea"
                   name="Drinks"
+                  onClick={[Function]}
                   type="checkbox"
                   value="Tea"
                 />
@@ -1179,9 +942,11 @@ exports[`Form handleClick: should render a different snapshot if advancedSearch 
                 key="casual-div"
               >
                 <input
+                  className="checkbox"
                   id="casual"
                   key="casual"
                   name="Atttire"
+                  onClick={[Function]}
                   type="checkbox"
                   value="casual"
                 />
@@ -1197,9 +962,11 @@ exports[`Form handleClick: should render a different snapshot if advancedSearch 
                 key="business casual-div"
               >
                 <input
+                  className="checkbox"
                   id="business casual"
                   key="business casual"
                   name="Atttire"
+                  onClick={[Function]}
                   type="checkbox"
                   value="business casual"
                 />
@@ -1215,9 +982,11 @@ exports[`Form handleClick: should render a different snapshot if advancedSearch 
                 key="smart casual-div"
               >
                 <input
+                  className="checkbox"
                   id="smart casual"
                   key="smart casual"
                   name="Atttire"
+                  onClick={[Function]}
                   type="checkbox"
                   value="smart casual"
                 />
@@ -1233,9 +1002,11 @@ exports[`Form handleClick: should render a different snapshot if advancedSearch 
                 key="formal-div"
               >
                 <input
+                  className="checkbox"
                   id="formal"
                   key="formal"
                   name="Atttire"
+                  onClick={[Function]}
                   type="checkbox"
                   value="formal"
                 />
@@ -1342,193 +1113,11 @@ exports[`Form should render the snapshot 1`] = `
     ]
   }
   resetResults={[MockFunction]}
-  results={
-    Array [
-      Object {
-        "address1": "8731 International Dr",
-        "attire": "Casual",
-        "city": "Orlando",
-        "genre": "Seafood,International,American,Oysters,Cafe",
-        "hours": "Mon-Fri 4:00 PM-10:00 PM; Sat-Sun 2:00 PM-10:00 PM",
-        "id": "cd273a24-f8de-44f6-8add-028e22229293",
-        "lat": "28.43897",
-        "long": "-81.470707",
-        "name": "Boston Lobster Feast",
-        "state": "FL",
-        "tags": "Social,Food and Dining,Restaurants,Seafood,Social,Food and Dining,Restaurants,American",
-        "telephone": "(407) 248-8606",
-        "website": "http://www.bostonlobsterfeast.com",
-        "zip": "32819",
-      },
-      Object {
-        "address1": "108 3rd St NE",
-        "attire": "business casual",
-        "city": "Charlottesville",
-        "genre": "French,European,Cafe,Continental,American",
-        "hours": "Mon-Thu 5:30 PM-9:00 PM; Fri-Sat 5:30 PM-10:00 PM",
-        "id": "0f41a3d0-0641-4eef-b7fd-706f083cf0d5",
-        "lat": "38.030526",
-        "long": "-78.479785",
-        "name": "Fleurie Restaurant",
-        "state": "VA",
-        "tags": "Social,Food and Dining,Restaurants,French",
-        "telephone": "(434) 971-7800",
-        "website": "http://www.fleurierestaurant.com",
-        "zip": "22902",
-      },
-      Object {
-        "address1": "303 E Main St",
-        "attire": "business casual",
-        "city": "Aspen",
-        "genre": "Japanese,Sushi,Asian,Contemporary,Seafood",
-        "hours": "Open Daily 5:30 PM-9:00 PM",
-        "id": "00b35e1a-82b1-4988-b8b9-6df826db2818",
-        "lat": "39.190723",
-        "long": "-106.82031",
-        "name": "Matsuhisa",
-        "state": "CO",
-        "tags": "Social,Food and Dining,Restaurants,Japanese,Social,Food and Dining,Restaurants,Sushi",
-        "telephone": "(970) 544-6628",
-        "website": "http://www.matsuhisaaspen.com",
-        "zip": "81611",
-      },
-      Object {
-        "address1": "201 Waterfront St",
-        "attire": "business casual",
-        "city": "Oxon Hill",
-        "genre": "Steak,American,Contemporary,Seafood,Cafe",
-        "hours": "Open Daily 5:30 PM-10:00 PM",
-        "id": "f223fdd0-4adc-423e-9747-980a66c256ca",
-        "lat": "38.782098",
-        "long": "-77.017492",
-        "name": "Old Hickory Steakhouse",
-        "state": "MD",
-        "tags": "Social,Food and Dining,Restaurants,Steakhouses",
-        "telephone": "(301) 965-4000",
-        "website": "http://www.gaylordnational.com",
-        "zip": "20745",
-      },
-      Object {
-        "address1": "500 Crescent Ct",
-        "attire": "business casual",
-        "city": "Dallas",
-        "genre": "Steak,American",
-        "hours": "Mon-Thu 11:00 AM-10:00 PM; Fri 11:00 AM-11:00 PM; Sat 5:00 PM-11:00 PM; Sun 5:00 PM-9:00 PM",
-        "id": "0b4bfe46-3e60-4de4-82ba-2dd8e5d46b56",
-        "lat": "32.794749",
-        "long": "-96.804099",
-        "name": "The Capital Grille",
-        "state": "TX",
-        "tags": "Social,Food and Dining,Restaurants,Steakhouses,Social,Food and Dining,Restaurants,American",
-        "telephone": "(214) 303-0500",
-        "website": "http://www.thecapitalgrille.com",
-        "zip": "75201",
-      },
-    ]
-  }
-  setFilteredResults={
-    [MockFunction] {
-      "calls": Array [
-        Array [
-          Object {
-            "query": "",
-            "results": Array [
-              Object {
-                "address1": "8731 International Dr",
-                "attire": "Casual",
-                "city": "Orlando",
-                "genre": "Seafood,International,American,Oysters,Cafe",
-                "hours": "Mon-Fri 4:00 PM-10:00 PM; Sat-Sun 2:00 PM-10:00 PM",
-                "id": "cd273a24-f8de-44f6-8add-028e22229293",
-                "lat": "28.43897",
-                "long": "-81.470707",
-                "name": "Boston Lobster Feast",
-                "state": "FL",
-                "tags": "Social,Food and Dining,Restaurants,Seafood,Social,Food and Dining,Restaurants,American",
-                "telephone": "(407) 248-8606",
-                "website": "http://www.bostonlobsterfeast.com",
-                "zip": "32819",
-              },
-              Object {
-                "address1": "108 3rd St NE",
-                "attire": "business casual",
-                "city": "Charlottesville",
-                "genre": "French,European,Cafe,Continental,American",
-                "hours": "Mon-Thu 5:30 PM-9:00 PM; Fri-Sat 5:30 PM-10:00 PM",
-                "id": "0f41a3d0-0641-4eef-b7fd-706f083cf0d5",
-                "lat": "38.030526",
-                "long": "-78.479785",
-                "name": "Fleurie Restaurant",
-                "state": "VA",
-                "tags": "Social,Food and Dining,Restaurants,French",
-                "telephone": "(434) 971-7800",
-                "website": "http://www.fleurierestaurant.com",
-                "zip": "22902",
-              },
-              Object {
-                "address1": "303 E Main St",
-                "attire": "business casual",
-                "city": "Aspen",
-                "genre": "Japanese,Sushi,Asian,Contemporary,Seafood",
-                "hours": "Open Daily 5:30 PM-9:00 PM",
-                "id": "00b35e1a-82b1-4988-b8b9-6df826db2818",
-                "lat": "39.190723",
-                "long": "-106.82031",
-                "name": "Matsuhisa",
-                "state": "CO",
-                "tags": "Social,Food and Dining,Restaurants,Japanese,Social,Food and Dining,Restaurants,Sushi",
-                "telephone": "(970) 544-6628",
-                "website": "http://www.matsuhisaaspen.com",
-                "zip": "81611",
-              },
-              Object {
-                "address1": "201 Waterfront St",
-                "attire": "business casual",
-                "city": "Oxon Hill",
-                "genre": "Steak,American,Contemporary,Seafood,Cafe",
-                "hours": "Open Daily 5:30 PM-10:00 PM",
-                "id": "f223fdd0-4adc-423e-9747-980a66c256ca",
-                "lat": "38.782098",
-                "long": "-77.017492",
-                "name": "Old Hickory Steakhouse",
-                "state": "MD",
-                "tags": "Social,Food and Dining,Restaurants,Steakhouses",
-                "telephone": "(301) 965-4000",
-                "website": "http://www.gaylordnational.com",
-                "zip": "20745",
-              },
-              Object {
-                "address1": "500 Crescent Ct",
-                "attire": "business casual",
-                "city": "Dallas",
-                "genre": "Steak,American",
-                "hours": "Mon-Thu 11:00 AM-10:00 PM; Fri 11:00 AM-11:00 PM; Sat 5:00 PM-11:00 PM; Sun 5:00 PM-9:00 PM",
-                "id": "0b4bfe46-3e60-4de4-82ba-2dd8e5d46b56",
-                "lat": "32.794749",
-                "long": "-96.804099",
-                "name": "The Capital Grille",
-                "state": "TX",
-                "tags": "Social,Food and Dining,Restaurants,Steakhouses,Social,Food and Dining,Restaurants,American",
-                "telephone": "(214) 303-0500",
-                "website": "http://www.thecapitalgrille.com",
-                "zip": "75201",
-              },
-            ],
-            "selectedState": null,
-          },
-        ],
-      ],
-      "results": Array [
-        Object {
-          "type": "return",
-          "value": undefined,
-        },
-      ],
-    }
-  }
+  setFilteredResults={[MockFunction]}
 >
   <form
     className="main-form"
+    onSubmit={[Function]}
   >
     <section
       className="regular-search-section"
@@ -1545,359 +1134,360 @@ exports[`Form should render the snapshot 1`] = `
           id="select-state"
           name="select"
           onChange={[Function]}
+          value=""
         >
           <option
-            id={0}
+            id=""
             key=""
-            value={0}
+            value=""
           />
           <option
-            id={1}
+            id="Alabama"
             key="Alabama"
-            value={1}
+            value="Alabama"
           >
             Alabama
           </option>
           <option
-            id={2}
+            id="Alaska"
             key="Alaska"
-            value={2}
+            value="Alaska"
           >
             Alaska
           </option>
           <option
-            id={3}
+            id="Arizona"
             key="Arizona"
-            value={3}
+            value="Arizona"
           >
             Arizona
           </option>
           <option
-            id={4}
+            id="Arkansas"
             key="Arkansas"
-            value={4}
+            value="Arkansas"
           >
             Arkansas
           </option>
           <option
-            id={5}
+            id="California"
             key="California"
-            value={5}
+            value="California"
           >
             California
           </option>
           <option
-            id={6}
+            id="Colorado"
             key="Colorado"
-            value={6}
+            value="Colorado"
           >
             Colorado
           </option>
           <option
-            id={7}
+            id="Connecticut"
             key="Connecticut"
-            value={7}
+            value="Connecticut"
           >
             Connecticut
           </option>
           <option
-            id={8}
+            id="Delaware"
             key="Delaware"
-            value={8}
+            value="Delaware"
           >
             Delaware
           </option>
           <option
-            id={9}
+            id="Florida"
             key="Florida"
-            value={9}
+            value="Florida"
           >
             Florida
           </option>
           <option
-            id={10}
+            id="Georgia"
             key="Georgia"
-            value={10}
+            value="Georgia"
           >
             Georgia
           </option>
           <option
-            id={11}
+            id="Hawaii"
             key="Hawaii"
-            value={11}
+            value="Hawaii"
           >
             Hawaii
           </option>
           <option
-            id={12}
+            id="Idaho"
             key="Idaho"
-            value={12}
+            value="Idaho"
           >
             Idaho
           </option>
           <option
-            id={13}
+            id="Illinois"
             key="Illinois"
-            value={13}
+            value="Illinois"
           >
             Illinois
           </option>
           <option
-            id={14}
+            id="Indiana"
             key="Indiana"
-            value={14}
+            value="Indiana"
           >
             Indiana
           </option>
           <option
-            id={15}
+            id="Iowa"
             key="Iowa"
-            value={15}
+            value="Iowa"
           >
             Iowa
           </option>
           <option
-            id={16}
+            id="Kansas"
             key="Kansas"
-            value={16}
+            value="Kansas"
           >
             Kansas
           </option>
           <option
-            id={17}
+            id="Kentucky"
             key="Kentucky"
-            value={17}
+            value="Kentucky"
           >
             Kentucky
           </option>
           <option
-            id={18}
+            id="Louisiana"
             key="Louisiana"
-            value={18}
+            value="Louisiana"
           >
             Louisiana
           </option>
           <option
-            id={19}
+            id="Maine"
             key="Maine"
-            value={19}
+            value="Maine"
           >
             Maine
           </option>
           <option
-            id={20}
+            id="Maryland"
             key="Maryland"
-            value={20}
+            value="Maryland"
           >
             Maryland
           </option>
           <option
-            id={21}
+            id="Massachusetts"
             key="Massachusetts"
-            value={21}
+            value="Massachusetts"
           >
             Massachusetts
           </option>
           <option
-            id={22}
+            id="Michigan"
             key="Michigan"
-            value={22}
+            value="Michigan"
           >
             Michigan
           </option>
           <option
-            id={23}
+            id="Minnesota"
             key="Minnesota"
-            value={23}
+            value="Minnesota"
           >
             Minnesota
           </option>
           <option
-            id={24}
+            id="Mississippi"
             key="Mississippi"
-            value={24}
+            value="Mississippi"
           >
             Mississippi
           </option>
           <option
-            id={25}
+            id="Missouri"
             key="Missouri"
-            value={25}
+            value="Missouri"
           >
             Missouri
           </option>
           <option
-            id={26}
+            id="Montana"
             key="Montana"
-            value={26}
+            value="Montana"
           >
             Montana
           </option>
           <option
-            id={27}
+            id="Nebraska"
             key="Nebraska"
-            value={27}
+            value="Nebraska"
           >
             Nebraska
           </option>
           <option
-            id={28}
+            id="Nevada"
             key="Nevada"
-            value={28}
+            value="Nevada"
           >
             Nevada
           </option>
           <option
-            id={29}
+            id="New Hampshire"
             key="New Hampshire"
-            value={29}
+            value="New Hampshire"
           >
             New Hampshire
           </option>
           <option
-            id={30}
+            id="New Jersey"
             key="New Jersey"
-            value={30}
+            value="New Jersey"
           >
             New Jersey
           </option>
           <option
-            id={31}
+            id="New Mexico"
             key="New Mexico"
-            value={31}
+            value="New Mexico"
           >
             New Mexico
           </option>
           <option
-            id={32}
+            id="New York"
             key="New York"
-            value={32}
+            value="New York"
           >
             New York
           </option>
           <option
-            id={33}
+            id="North Carolina"
             key="North Carolina"
-            value={33}
+            value="North Carolina"
           >
             North Carolina
           </option>
           <option
-            id={34}
+            id="North Dakota"
             key="North Dakota"
-            value={34}
+            value="North Dakota"
           >
             North Dakota
           </option>
           <option
-            id={35}
+            id="Ohio"
             key="Ohio"
-            value={35}
+            value="Ohio"
           >
             Ohio
           </option>
           <option
-            id={36}
+            id="Oklahoma"
             key="Oklahoma"
-            value={36}
+            value="Oklahoma"
           >
             Oklahoma
           </option>
           <option
-            id={37}
+            id="Oregon"
             key="Oregon"
-            value={37}
+            value="Oregon"
           >
             Oregon
           </option>
           <option
-            id={38}
+            id="Pennsylvania"
             key="Pennsylvania"
-            value={38}
+            value="Pennsylvania"
           >
             Pennsylvania
           </option>
           <option
-            id={39}
+            id="Rhode Island"
             key="Rhode Island"
-            value={39}
+            value="Rhode Island"
           >
             Rhode Island
           </option>
           <option
-            id={40}
+            id="South Carolina"
             key="South Carolina"
-            value={40}
+            value="South Carolina"
           >
             South Carolina
           </option>
           <option
-            id={41}
+            id="South Dakota"
             key="South Dakota"
-            value={41}
+            value="South Dakota"
           >
             South Dakota
           </option>
           <option
-            id={42}
+            id="Tennessee"
             key="Tennessee"
-            value={42}
+            value="Tennessee"
           >
             Tennessee
           </option>
           <option
-            id={43}
+            id="Texas"
             key="Texas"
-            value={43}
+            value="Texas"
           >
             Texas
           </option>
           <option
-            id={44}
+            id="Utah"
             key="Utah"
-            value={44}
+            value="Utah"
           >
             Utah
           </option>
           <option
-            id={45}
+            id="Vermont"
             key="Vermont"
-            value={45}
+            value="Vermont"
           >
             Vermont
           </option>
           <option
-            id={46}
+            id="Virginia"
             key="Virginia"
-            value={46}
+            value="Virginia"
           >
             Virginia
           </option>
           <option
-            id={47}
+            id="Washington"
             key="Washington"
-            value={47}
+            value="Washington"
           >
             Washington
           </option>
           <option
-            id={48}
+            id="West Virginia"
             key="West Virginia"
-            value={48}
+            value="West Virginia"
           >
             West Virginia
           </option>
           <option
-            id={49}
+            id="Wisconsin"
             key="Wisconsin"
-            value={49}
+            value="Wisconsin"
           >
             Wisconsin
           </option>
           <option
-            id={50}
+            id="Wyoming"
             key="Wyoming"
-            value={50}
+            value="Wyoming"
           >
             Wyoming
           </option>
@@ -1913,17 +1503,18 @@ exports[`Form should render the snapshot 1`] = `
           type="text"
           value=""
         />
-        <button
+        <img
+          alt="clear"
+          className="clear-icon"
           onClick={[Function]}
-          type="button"
-        >
-          X
-        </button>
-        <button
-          type="button"
-        >
-          Search
-        </button>
+          src="close.svg"
+        />
+        <img
+          alt="search"
+          className="search-icon"
+          onClick={[Function]}
+          src="search.svg"
+        />
       </div>
       <div
         className="advanced-search-div"
@@ -1931,13 +1522,12 @@ exports[`Form should render the snapshot 1`] = `
         <h3>
           Advanced Search
         </h3>
-        <button
+        <img
+          alt="expand"
           id="advanced-search-btn"
           onClick={[Function]}
-          type="button"
-        >
-          +
-        </button>
+          src="downArrow.svg"
+        />
       </div>
     </section>
     <section
