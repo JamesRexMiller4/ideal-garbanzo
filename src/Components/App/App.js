@@ -38,24 +38,21 @@ const App = () => {
     .catch(error => setError(error))
   }, []);
 
-  const resetResults = (setQuery, setSelectedState) => {
+  const resetResults = (setQuery, setSelectedState, setCheckedBoxes) => {
     setResults(utilFunctions.alphabatizeResults(data));
     setQuery('');
     setSelectedState('');
+    setCheckedBoxes([]);
   };
 
   const setFilteredResults = (resultsData, query, selectedState, states, checkedBoxes) => {
     if (selectedState === "" && query === "" && checkedBoxes.length === 0) setResults(utilFunctions.alphabatizeResults(resultsData));
-    // if (selectedState !== "" && query !== "" && checkedBoxes.length > 0) {
-    let filteredResults = utilFunctions.filterByState(resultsData, selectedState, states)
-    filteredResults = utilFunctions.filterByQuery(filteredResults, query)
-    filteredResults = utilFunctions.filterByCheckboxes(filteredResults, checkedBoxes)
-    setResults(filteredResults)
-    // };
-    // if (checkedBoxes.length > 0) setResults(utilFunctions.filterByCheckedBoxes(filteredResults, checkedBoxes))
-    // if (query !== "") setResults(utilFunctions.filterByQuery(resultsData, query));
-    // if (selectedState !== "") setResults(utilFunctions.filterByState(resultsData, selectedState, states));
-    // if (selectedState === "" && query === "" && checkedBoxes.length === 0) setResults(utilFunctions.alphabatizeResults(resultsData));
+
+    let filteredResults = utilFunctions.filterByState(resultsData, selectedState, states);
+    filteredResults = utilFunctions.filterByQuery(filteredResults, query);
+    filteredResults = utilFunctions.filterByCheckboxes(filteredResults, checkedBoxes);
+    
+    setResults(filteredResults);
   };
 
   return (

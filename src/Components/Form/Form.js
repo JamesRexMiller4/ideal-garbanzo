@@ -108,7 +108,7 @@ const Form = ({ data, resetResults, setFilteredResults }) => {
         <div className='search-bar-div'>
           <input id='search-bar' type='text' value={query} 
           placeholder="Search Bar" onChange={handleChange}/>
-          <img className="clear-icon" src={close} alt="clear" onClick={() => resetResults(setQuery, setSelectedState)} />
+          <img className="clear-icon" src={close} alt="clear" onClick={() => resetResults(setQuery, setSelectedState, setCheckedBoxes)} />
           <img className="search-icon"src={search} alt="search" 
           onClick={() => setFilteredResults(data, query, selectedState, stateAbbreviations, checkedBoxes)} />
         </div>
