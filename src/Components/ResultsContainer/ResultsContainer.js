@@ -6,6 +6,7 @@ import leftArrow from '../../icons/left-arrow.svg';
 
 const ResultsContainer = ({results}) => {
   const [ page, setPage ] = useState(1);
+  const TOTALRESULTSLENGTH = Math.round(results.length / 10);
 
   const paginateResults = (resultData) => {
     const start = (page - 1) * 10;
@@ -14,18 +15,14 @@ const ResultsContainer = ({results}) => {
     return resultData.slice(start, end);
   };
 
-  const generatePaginationLinks = (data) => {
-    let numPages = Math.floor(data.length / 10)
-    if (data.length % 10 !== 0) {
-      numPages++
+  const updateCurrentPage = (currentPage, incrementor) => {
+    if (incrementor < 0) {
+      currentPage === 1 ? setPage(1) : setPage(page - 1);
     }
-    let links = [];
-
-    for (let i=0; i < numPages; i++) {
-      let pageLink = <a key={'page-' + i} id={i + 1} onClick={setPage}>{i + 1}</a>
-      links.push(pageLink);
+    if (incrementor > 0) {
+      currentPage === TOTALRESULTSLENGTH ? setPage(TOTALRESULTSLENGTH)
+      : setPage(page + 1);
     }
-    return links
   };
 
   const resultCards = paginateResults(results).map(result => (
@@ -34,9 +31,9 @@ const ResultsContainer = ({results}) => {
   return ( 
     <section className="results-container-section">
       <div className='results-pagination-div'>
-        <img src={leftArrow} alt="previous-results"/>
+        <img onClick={() => updateCurrentPage(page, -1)} src={leftArrow} alt="previous-results"/>
         <h2>{"Showing " + page + " of " + (Math.round(results.length / 10))}</h2>
-        <img src={next} alt="more-results"/>
+        <img onClick={() => updateCurrentPage(page, 1)} src={next} alt="more-results"/>
       </div>
         {resultCards}
     </section>
