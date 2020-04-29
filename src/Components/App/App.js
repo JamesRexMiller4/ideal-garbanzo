@@ -44,15 +44,18 @@ const App = () => {
     setSelectedState('');
   };
 
-  const setFilteredResults = (resultsData, query, selectedState, states) => {
-    if (selectedState !== "" && query !== "") {
-      let filteredResults = utilFunctions.filterByState(resultsData, selectedState, states)
-      filteredResults = utilFunctions.filterByQuery(filteredResults, query)
-      setResults(filteredResults)
-    };
-    if (query !== "") setResults(utilFunctions.filterByQuery(resultsData, query));
-    if (selectedState !== "") setResults(utilFunctions.filterByState(resultsData, selectedState, states));
-    if (selectedState === "" && query === "") setResults(utilFunctions.alphabatizeResults(resultsData));
+  const setFilteredResults = (resultsData, query, selectedState, states, checkedBoxes) => {
+    if (selectedState === "" && query === "" && checkedBoxes.length === 0) setResults(utilFunctions.alphabatizeResults(resultsData));
+    // if (selectedState !== "" && query !== "" && checkedBoxes.length > 0) {
+    let filteredResults = utilFunctions.filterByState(resultsData, selectedState, states)
+    filteredResults = utilFunctions.filterByQuery(filteredResults, query)
+    filteredResults = utilFunctions.filterByCheckboxes(filteredResults, checkedBoxes)
+    setResults(filteredResults)
+    // };
+    // if (checkedBoxes.length > 0) setResults(utilFunctions.filterByCheckedBoxes(filteredResults, checkedBoxes))
+    // if (query !== "") setResults(utilFunctions.filterByQuery(resultsData, query));
+    // if (selectedState !== "") setResults(utilFunctions.filterByState(resultsData, selectedState, states));
+    // if (selectedState === "" && query === "" && checkedBoxes.length === 0) setResults(utilFunctions.alphabatizeResults(resultsData));
   };
 
   return (

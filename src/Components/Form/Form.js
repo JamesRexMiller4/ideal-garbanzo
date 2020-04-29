@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Form.scss';
 import utilData from '../../data/utilData.js';
 import close from '../../icons/close.svg';
@@ -13,6 +13,17 @@ const Form = ({ data, resetResults, setFilteredResults }) => {
   const [ advancedSearch, setAdvancedSearch ] = useState(false);
   const [ checkedBoxes, setCheckedBoxes ] = useState([]);
 
+  useEffect(() => {
+    if (advancedSearch) {
+      let boxes = Array.from(document.querySelectorAll('.checkbox'))
+      
+      boxes.forEach(box => {
+        if (checkedBoxes.includes(box.value)) {
+          box.checked = true
+        }
+      })
+    }
+  }, [advancedSearch, checkedBoxes])
 
   const handleChange = (e) => {
     setQuery(e.target.value);
@@ -27,13 +38,13 @@ const Form = ({ data, resetResults, setFilteredResults }) => {
   }
 
   const handleStateSelection = (e) => {
-    setFilteredResults(data, query, e.target.value, stateAbbreviations)
+    setFilteredResults(data, query, e.target.value, stateAbbreviations, checkedBoxes)
     setSelectedState(e.target.value)
   }
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setFilteredResults(data, query, selectedState, stateAbbreviations);
+    setFilteredResults(data, query, selectedState, stateAbbreviations, checkedBoxes);
   }
 
   const generateStateOptions = () => {
@@ -46,7 +57,7 @@ const Form = ({ data, resetResults, setFilteredResults }) => {
     const makeACheckbox = (val, legend) => {
       return (
         <div key={val + '-div'} className='checkbox-div'>
-          <input key={val} id={val} onClick={(e) => handleCheckBoxClick(e)} 
+          <input className="checkbox" key={val} id={val} onClick={(e) => handleCheckBoxClick(e)} 
           type="checkbox" name={legend} value={val} />
           <label key={val + "-label"} htmlFor={val}>{val}</label>
         </div>)
@@ -99,7 +110,7 @@ const Form = ({ data, resetResults, setFilteredResults }) => {
           placeholder="Search Bar" onChange={handleChange}/>
           <img className="clear-icon" src={close} alt="clear" onClick={() => resetResults(setQuery, setSelectedState)} />
           <img className="search-icon"src={search} alt="search" 
-          onClick={() => setFilteredResults(data, query, selectedState, stateAbbreviations)} />
+          onClick={() => setFilteredResults(data, query, selectedState, stateAbbreviations, checkedBoxes)} />
         </div>
         <div className='advanced-search-div'>
           <h3>Advanced Search</h3>

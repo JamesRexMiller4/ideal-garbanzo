@@ -3,12 +3,15 @@ export const alphabatizeResults = (results) => {
 };
 
 export const filterByState = (arr, selectedState, states) => {
+  if (selectedState === "") return arr 
   let selectedAbbrv = states[selectedState];
   if (!selectedAbbrv) return arr;
   return arr.filter(record => record.state.includes(selectedAbbrv));
 };
 
 export const filterByQuery = (arr, query) => {
+  if (query === "") return arr
+
   return arr.filter(record => {
     return record.name.toLowerCase().includes(query.toLowerCase()) ? true
     : record.city.toLowerCase().includes(query.toLowerCase()) ? true
