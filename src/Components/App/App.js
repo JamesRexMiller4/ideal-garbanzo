@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import './App.scss';
 import Header from '../Header/Header';
 import Form from '../Form/Form';
 import ResultsContainer from '../ResultsContainer/ResultsContainer';
@@ -8,62 +7,57 @@ import { getData } from '../../apiCalls/apiCalls.js';
 import * as utilFunctions from '../../utils/utilFunctions.js';
 
 const App = () => {
-  const [ data, setData ] = useState([]);
-  const [ error, setError ] = useState('');  
-  const [ results, setResults ] = useState([]);
-  const [ page, setPage ] = useState(1);
+  const [ appState, setAppState ] = useState({
+    data: [],
+    error: '',
+    results: [],
+    page: 1
+  }); 
   
   useEffect(() => {
     getData().then(data => {
-      let cleanedData = data.map(restaurant => {
-        return {
-          id: restaurant["id"],
-          name: restaurant["name"],
-          address1: restaurant["address1"],
-          city: restaurant["city"],
-          state: restaurant["state"],
-          zip: restaurant["zip"],
-          telephone: restaurant["telephone"],
-          tags: restaurant["tags"],
-          website: restaurant["website"],
-          genre: restaurant["genre"],
-          hours: restaurant["hours"],
-          attire: restaurant["attire"]
-        }
-      });
+      let cleanedData = utilFunctions.cleanData(data)
       
-      setData(cleanedData)
-      setResults(utilFunctions.alphabatizeResults(data))
+      setAppState({
+        ...appState, 
+        data: cleanedData,
+        results: cleanedData
+      })
     })
-    .catch(error => setError(error))
-  }, []);
+    .catch(error => setAppState({...appState, error: error}))
+  }, []); //eslint-disable-line
 
-  const resetResults = (setQuery, setSelectedState, setCheckedBoxes) => {
-    setResults(utilFunctions.alphabatizeResults(data));
-    setQuery('');
-    setSelectedState('');
-    setCheckedBoxes([]);
+  const resetResults = (setFormState) => {
+    setAppState({...appState, results: [...appState.data], page: 1})
+    setFormState({
+      query: '',
+      selectedState: '',
+      advancedSearch: false,
+      checkedBoxes: []
+    })
   };
 
   const setFilteredResults = (resultsData, query, selectedState, states, checkedBoxes) => {
-    if (selectedState === "" && query === "" && checkedBoxes.length === 0) setResults(utilFunctions.alphabatizeResults(resultsData));
+    if (selectedState === "" && query === "" && checkedBoxes.length === 0) {
+      return setAppState({...appState, results: [...appState.data]});
+    }
 
     let filteredResults = utilFunctions.filterByState(resultsData, selectedState, states);
     filteredResults = utilFunctions.filterByQuery(filteredResults, query);
     filteredResults = utilFunctions.filterByCheckboxes(filteredResults, checkedBoxes);
     
-    setResults(filteredResults);
+    setAppState({...appState, results: filteredResults, page: 1});
   };
 
   return (
     <div className="App">
       <Header />
       <Form 
-        data={data}
+        data={appState.data}
         resetResults={resetResults}
         setFilteredResults={setFilteredResults}/>
-      { data ? <ResultsContainer page={page} setPage={setPage} results={results}/> 
-        : <h2>{error}</h2> }
+      { appState.data ? <ResultsContainer state={appState} setState={setAppState} results={appState.results}/> 
+        : <h2>{appState.error}</h2> }
       <Footer />
     </div>
   );

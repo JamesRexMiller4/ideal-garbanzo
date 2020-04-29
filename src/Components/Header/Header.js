@@ -1,5 +1,4 @@
 import React from 'react';
-import './Header.scss';
 import play from '../../icons/play.svg';
 
 const Header = () => {

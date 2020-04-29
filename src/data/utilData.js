@@ -91,10 +91,10 @@ const utilData = {
   ],
 
   "Atttire": [
-    "casual",
-    "business casual",
-    "smart casual", 
-    'formal'
+    "Casual",
+    "Business Casual",
+    "Smart Casual", 
+    'Formal'
   ]
 }
 

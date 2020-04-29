@@ -6,14 +6,12 @@ const ResultCard = ({result}) => {
 
   const generateGenreTags = (genres) => {
     let splitUpGenres = genres.split(',');
-    // remove duplicates
-    splitUpGenres = splitUpGenres.filter((a, b) => splitUpGenres.indexOf(a) === b)
-    return splitUpGenres.map(genre => <button key={Date.now() * Math.random()} className='genre-tag-btn'>{genre}</button>);
+    return splitUpGenres.map((genre, idx) => <button key={idx} className='genre-tag-btn'>{genre}</button>);
   };
 
   const generateHoursOfOperation = (hours) => {
     let splitUpHours = hours.split(';');
-    return splitUpHours.map(hour => <h5>{hour}</h5>)
+    return splitUpHours.map((hour, idx) => <h5 key={idx}>{hour}</h5>)
   }
 
 
@@ -46,6 +44,10 @@ const ResultCard = ({result}) => {
             <div className='hours-div'>
               <h4>Hours of Operation:</h4>
               {generateHoursOfOperation(result.hours)}
+            </div>
+            <div className='attire-div'>
+              <h4>Attire:</h4>
+              <h5>{result.attire}</h5>
             </div>
             <div className='tags-container-div'>
               <h4>Tags:</h4>

@@ -10,8 +10,8 @@ describe('ResultsContainer', () => {
     largerMockData = [...mockData, ...mockData, ...mockData];
     mockSetPage = jest.fn();
     wrapper = shallow(<ResultsContainer 
-      page={1}
-      setPage={mockSetPage}
+      state={1}
+      setState={mockSetPage}
       results={largerMockData}/>)
   })
  
