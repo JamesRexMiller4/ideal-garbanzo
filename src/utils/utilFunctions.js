@@ -29,17 +29,15 @@ export const filterByQuery = (arr, query) => {
 export const filterByCheckboxes = (arrData, arrCheckboxes) => {
   if (arrCheckboxes.length === 0) return arrData
 
-  let i = 0;
   let results = arrData;
 
-  while (arrCheckboxes[i]) {
+  for(let i = 0; arrCheckboxes[i]; i++) {
     results = results.filter(record => {
       return record.genre.toLowerCase().includes(arrCheckboxes[i].toLowerCase()) ? true
       : record.tags.toLowerCase().includes(arrCheckboxes[i].toLowerCase()) ? true
       : record.attire.toLowerCase() === arrCheckboxes[i].toLowerCase() ? true
       : null
     })
-    i++
   }
   return results
 }

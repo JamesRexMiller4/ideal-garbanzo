@@ -8,17 +8,19 @@ import { getData } from '../../apiCalls/apiCalls.js';
 import * as utilFunctions from '../../utils/utilFunctions.js';
 
 const App = () => {
-  const [ data, setData ] = useState([]);
-  const [ error, setError ] = useState('');  
-  const [ results, setResults ] = useState([]);
-  const [ page, setPage ] = useState(1);
+  const [ appState, setAppState ] = useState({
+    data: [],
+    error: '',
+    results: [],
+    page: 1
+  }); 
   
   useEffect(() => {
     getData().then(data => {
       let cleanedData = data.map(restaurant => {
         return {
           id: restaurant["id"],
-          name: utilFunctions.titleCase(restaurant["name"]),
+          name: restaurant["name"],
           address1: restaurant["address1"],
           city: restaurant["city"],
           state: restaurant["state"],
@@ -28,41 +30,48 @@ const App = () => {
           website: restaurant["website"],
           genre: restaurant["genre"],
           hours: restaurant["hours"],
-          attire: utilFunctions.titleCase(restaurant["attire"])
+          attire: restaurant["attire"]
         }
       });
       
-      return setData(cleanedData)
-    }).then(cleanedData => setResults(utilFunctions.alphabatizeResults(data)))
-    .catch(error => setError(error))
+        setAppState({
+          ...appState, 
+          data: cleanedData,
+          results: utilFunctions.alphabatizeResults(cleanedData)
+        })
+    })
+    .catch(error => setAppState({...appState, error: error}))
   }, []);
 
   const resetResults = (setQuery, setSelectedState, setCheckedBoxes) => {
-    setResults(utilFunctions.alphabatizeResults(data));
+    setAppState({...appState, results: utilFunctions.alphabatizeResults(appState.data), page: 1})
+
     setQuery('');
     setSelectedState('');
     setCheckedBoxes([]);
   };
 
   const setFilteredResults = (resultsData, query, selectedState, states, checkedBoxes) => {
-    if (selectedState === "" && query === "" && checkedBoxes.length === 0) setResults(utilFunctions.alphabatizeResults(resultsData));
+    if (selectedState === "" && query === "" && checkedBoxes.length === 0) {
+      return setAppState({...appState, results: utilFunctions.alphabatizeResults(resultsData)});
+    }
 
     let filteredResults = utilFunctions.filterByState(resultsData, selectedState, states);
     filteredResults = utilFunctions.filterByQuery(filteredResults, query);
     filteredResults = utilFunctions.filterByCheckboxes(filteredResults, checkedBoxes);
     
-    setResults(filteredResults);
+    setAppState({...appState, results: filteredResults, page: 1});
   };
 
   return (
     <div className="App">
       <Header />
       <Form 
-        data={data}
+        data={appState.data}
         resetResults={resetResults}
         setFilteredResults={setFilteredResults}/>
-      { data ? <ResultsContainer page={page} setPage={setPage} results={results}/> 
-        : <h2>{error}</h2> }
+      { appState.data ? <ResultsContainer state={appState} setState={setAppState} results={appState.results}/> 
+        : <h2>{appState.error}</h2> }
       <Footer />
     </div>
   );
