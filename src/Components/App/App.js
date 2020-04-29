@@ -5,8 +5,8 @@ import Form from '../Form/Form';
 import ResultsContainer from '../ResultsContainer/ResultsContainer';
 import Footer from '../Footer/Footer';
 import { getData } from '../../apiCalls/apiCalls.js';
-import { alphabatizeResults } from '../../utils/utilFunctions.js';
-import stateAbbreviations from '../../data/stateAbbreviations.js';
+import * as utilFunctions from '../../utils/utilFunctions.js';
+// import stateAbbreviations from '../../data/stateAbbreviations.js';
 
 const App = () => {
   const [ data, setData ] = useState([]);
@@ -25,7 +25,7 @@ const App = () => {
           state: restaurant["state"],
           zip: restaurant["zip"],
           telephone: restaurant["telephone"],
-          tags: [...new Set(restaurant["tags"])],
+          tags: restaurant["tags"],
           website: restaurant["website"],
           genre: restaurant["genre"],
           hours: restaurant["hours"],
@@ -34,60 +34,41 @@ const App = () => {
       });
       
       setData(cleanedData)
-      setResults(alphabatizeResults(data))
+      const results = utilFunctions.alphabatizeResults(data)
+      setResults(results)
     })
     .catch(error => setError(error))
   }, []);
 
-  const resetResults = (setQuery) => {
-    setResults(alphabatizeResults(data));
+  const resetResults = (setQuery, setSelectedState) => {
+    setResults(utilFunctions.alphabatizeResults(data));
     setQuery('');
-    document.querySelector('#select-state').value = "";
+    setSelectedState('');
   };
 
-  const setFilteredResults = (resultsData, selectedState, query) => {
-
-    const filterByState = (selectedState, states=stateAbbreviations) => {
-      const selectedAbbrv = states[selectedState];
-      const stateData = resultsData.filter(result => result.state === selectedAbbrv && result);
-      return stateData;
+  const setFilteredResults = (resultsData, query, selectedState, states) => {
+    console.log(resultsData)
+    
+    if (selectedState !== "" && query !== "") {
+      let filteredResults = utilFunctions.filterByState(resultsData, selectedState, states)
+      filteredResults = utilFunctions.filterByQuery(filteredResults, query)
+        setResults([...filteredResults])
     };
 
-    const filterByQuery = () => {
-      const filterByGenre = () => {
-        return resultsData.filter(result => result.genres.includes(query));
-      };
-
-      const filterByName = (filteredResults => {
-        return filteredResults.filter(result => {
-          let name = results.name.toLowerCase();
-          let string = query.toLowerCase();
-          return name.includes(string);
-        });
-      });
-
-      const filterByCity = (filteredResults=> {
-        return filteredResults.filter(result => {
-          let city = result.city.toLowerCase();
-          let string = query.toLowerCase();
-          return city.includes(string);
-        });
-      });
-
-      let newResults = [...filterByName([...filterByGenre(query)])];
-      newResults = [...filterByCity(newResults)];
-      return newResults;
+    if (query !== "")  {
+        const results = utilFunctions.filterByQuery(resultsData, query)
+        setResults([...results])
     };
-
-    if (selectedState) {
-      setResults(filterByState(selectedState));
-      setPage(1);
+  
+    if (selectedState !== "") {
+        const results = utilFunctions.filterByState(resultsData, selectedState, states)
+        console.log(results)
+        setResults([...results]);
     }
-    if (query) {
-      setResults([...filterByQuery()]);
-      setPage(1);
-    }
-    return;
+    if (selectedState === "" && query === "") {
+        const results = utilFunctions.alphabatizeResults(resultsData)
+        setResults([...results]);
+    };
   };
 
   return (
@@ -95,7 +76,6 @@ const App = () => {
       <Header />
       <Form 
         data={data}
-        results={results}
         resetResults={resetResults}
         setFilteredResults={setFilteredResults}/>
       { data ? <ResultsContainer page={page} setPage={setPage} results={results}/> 

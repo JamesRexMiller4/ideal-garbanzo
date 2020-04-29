@@ -24,8 +24,10 @@ const ResultsContainer = ({page, setPage, results}) => {
     }
   };
 
-  const resultCards = paginateResults(results).map(result => (
-  <ResultCard key={result.id} id={result.it} result={result}/>))
+  const resultCards = paginateResults(results).map(result => {
+    return <ResultCard key={result.id} id={result.id} result={result}/>
+  })
+
   
   return ( 
     <section className="results-container-section">

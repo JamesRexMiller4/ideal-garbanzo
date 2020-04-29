@@ -5,9 +5,11 @@ import close from '../../icons/close.svg';
 import search from '../../icons/search.svg';
 import downArrow from '../../icons/downArrow.svg';
 import upArrow from '../../icons/upArrow.svg';
+import stateAbbreviations from '../../data/stateAbbreviations.js';
 
-const Form = ({ data, results, resetResults, setFilteredResults }) => {
+const Form = ({ data, resetResults, setFilteredResults }) => {
   const [ query, setQuery ] = useState('');
+  const [ selectedState, setSelectedState ] = useState('');
   const [ advancedSearch, setAdvancedSearch ] = useState(false);
 
   const handleChange = (e) => {
@@ -17,6 +19,16 @@ const Form = ({ data, results, resetResults, setFilteredResults }) => {
   const handleClick = (e) => {
     setAdvancedSearch(!advancedSearch);
   };
+
+  const handleStateSelection = (e) => {
+    setFilteredResults(data, query, e.target.value, stateAbbreviations)
+    setSelectedState(e.target.value)
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setFilteredResults(data, query, selectedState, stateAbbreviations);
+  }
 
   const generateStateOptions = () => {
     return utilData["states"].map((state, index) => {
@@ -68,23 +80,21 @@ const Form = ({ data, results, resetResults, setFilteredResults }) => {
   };
 
   return (
-    <form className='main-form'>
+    <form className='main-form' onSubmit={(e) => handleSubmit(e)}>
       <section className='regular-search-section'>
         <div className='select-state-div'>
           <label htmlFor='select-state'>Filter by State</label>
           <select id='select-state' name='select'
-            onChange={(e) => setFilteredResults(data, e.target.value, query)}>
+            onChange={(e) => handleStateSelection(e)}>
               {generateStateOptions()}
           </select>
         </div>
         <div className='search-bar-div'>
           <input id='search-bar' type='text' value={query} 
           placeholder="Search Bar" onChange={handleChange}/>
-          <img className="clear-icon" src={close} alt="clear" onClick={() => resetResults(setQuery)} />
-          <img className="search-icon"src={search} alt="search" onClick={setFilteredResults({
-            results: results,
-            selectedState: null, 
-            query: query})} />
+          <img className="clear-icon" src={close} alt="clear" onClick={() => resetResults(setQuery, setSelectedState)} />
+          <img className="search-icon"src={search} alt="search" 
+          onClick={() => setFilteredResults(data, query, selectedState, stateAbbreviations)} />
         </div>
         <div className='advanced-search-div'>
           <h3>Advanced Search</h3>
