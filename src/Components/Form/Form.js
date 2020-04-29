@@ -34,7 +34,11 @@ const Form = ({ data, resetResults, setFilteredResults }) => {
   };
 
   const handleCheckBoxClick = (e) => {
-    setCheckedBoxes([...checkedBoxes, e.target.value])
+    if (checkedBoxes.includes(e.target.value)) {
+      e.target.checked = false
+      const filteredResults = checkedBoxes.filter(val => val !== e.target.value)
+      setCheckedBoxes(filteredResults)
+    } else setCheckedBoxes([...checkedBoxes, e.target.value])
   }
 
   const handleStateSelection = (e) => {
