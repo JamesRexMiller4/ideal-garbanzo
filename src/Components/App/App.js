@@ -17,34 +17,19 @@ const App = () => {
   
   useEffect(() => {
     getData().then(data => {
-      let cleanedData = data.map(restaurant => {
-        return {
-          id: restaurant["id"],
-          name: restaurant["name"],
-          address1: restaurant["address1"],
-          city: restaurant["city"],
-          state: restaurant["state"],
-          zip: restaurant["zip"],
-          telephone: restaurant["telephone"],
-          tags: restaurant["tags"],
-          website: restaurant["website"],
-          genre: restaurant["genre"],
-          hours: restaurant["hours"],
-          attire: restaurant["attire"]
-        }
-      });
+      let cleanedData = utilFunctions.cleanData(data)
       
-        setAppState({
-          ...appState, 
-          data: cleanedData,
-          results: utilFunctions.alphabatizeResults(cleanedData)
-        })
+      setAppState({
+        ...appState, 
+        data: cleanedData,
+        results: cleanedData
+      })
     })
     .catch(error => setAppState({...appState, error: error}))
-  }, []);
+  }, []); //eslint-disable-line
 
   const resetResults = (setFormState) => {
-    setAppState({...appState, results: utilFunctions.alphabatizeResults(appState.data), page: 1})
+    setAppState({...appState, results: [...appState.data], page: 1})
     setFormState({
       query: '',
       selectedState: '',
@@ -55,7 +40,7 @@ const App = () => {
 
   const setFilteredResults = (resultsData, query, selectedState, states, checkedBoxes) => {
     if (selectedState === "" && query === "" && checkedBoxes.length === 0) {
-      return setAppState({...appState, results: utilFunctions.alphabatizeResults(resultsData)});
+      return setAppState({...appState, results: [...appState.data]});
     }
 
     let filteredResults = utilFunctions.filterByState(resultsData, selectedState, states);

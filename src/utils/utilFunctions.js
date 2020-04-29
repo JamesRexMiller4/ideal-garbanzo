@@ -7,6 +7,27 @@ export const titleCase = (string) => {
   return newString.map(word => word.replace(word[0], word[0].toUpperCase())).join(' ');
 }
 
+
+export const cleanData = (dataArr) => {
+  const reformatted = dataArr.map(restaurant => {
+    return {
+      id: restaurant["id"],
+      name: titleCase(restaurant["name"]),
+      address1: restaurant["address1"],
+      city: restaurant["city"],
+      state: restaurant["state"],
+      zip: restaurant["zip"],
+      telephone: restaurant["telephone"],
+      tags: restaurant["tags"],
+      website: restaurant["website"],
+      genre: restaurant["genre"],
+      hours: restaurant["hours"],
+      attire: titleCase(restaurant["attire"])
+    }
+  })
+  return alphabatizeResults(reformatted)
+};
+
 export const filterByState = (arr, selectedState, states) => {
   if (selectedState === "") return arr 
   let selectedAbbrv = states[selectedState];
@@ -22,6 +43,7 @@ export const filterByQuery = (arr, query) => {
     : record.city.toLowerCase().includes(query.toLowerCase()) ? true
     : record.genre.toLowerCase().includes(query.toLowerCase()) ? true
     : record.attire.toLowerCase().includes(query.toLowerCase()) ? true
+    : record.tags.toLowerCase().includes(query.toLowerCase()) ? true
     : null
   });
 };
