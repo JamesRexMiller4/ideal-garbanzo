@@ -67,7 +67,11 @@ article {
     display: flex;
     align-items: space-around;
     justify-content: space-around;
+    div {
+      padding: 2rem;
+    }
   }
+
 }
 
 .tags-container-div {

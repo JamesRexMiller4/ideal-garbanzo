@@ -939,82 +939,82 @@ exports[`Form handleClick: should render a different snapshot if advancedSearch 
             >
               <div
                 className="checkbox-div"
-                key="casual-div"
+                key="Casual-div"
               >
                 <input
                   className="checkbox"
-                  id="casual"
-                  key="casual"
+                  id="Casual"
+                  key="Casual"
                   name="Atttire"
                   onClick={[Function]}
                   type="checkbox"
-                  value="casual"
+                  value="Casual"
                 />
                 <label
-                  htmlFor="casual"
-                  key="casual-label"
+                  htmlFor="Casual"
+                  key="Casual-label"
                 >
-                  casual
+                  Casual
                 </label>
               </div>
               <div
                 className="checkbox-div"
-                key="business casual-div"
+                key="Business Casual-div"
               >
                 <input
                   className="checkbox"
-                  id="business casual"
-                  key="business casual"
+                  id="Business Casual"
+                  key="Business Casual"
                   name="Atttire"
                   onClick={[Function]}
                   type="checkbox"
-                  value="business casual"
+                  value="Business Casual"
                 />
                 <label
-                  htmlFor="business casual"
-                  key="business casual-label"
+                  htmlFor="Business Casual"
+                  key="Business Casual-label"
                 >
-                  business casual
+                  Business Casual
                 </label>
               </div>
               <div
                 className="checkbox-div"
-                key="smart casual-div"
+                key="Smart Casual-div"
               >
                 <input
                   className="checkbox"
-                  id="smart casual"
-                  key="smart casual"
+                  id="Smart Casual"
+                  key="Smart Casual"
                   name="Atttire"
                   onClick={[Function]}
                   type="checkbox"
-                  value="smart casual"
+                  value="Smart Casual"
                 />
                 <label
-                  htmlFor="smart casual"
-                  key="smart casual-label"
+                  htmlFor="Smart Casual"
+                  key="Smart Casual-label"
                 >
-                  smart casual
+                  Smart Casual
                 </label>
               </div>
               <div
                 className="checkbox-div"
-                key="formal-div"
+                key="Formal-div"
               >
                 <input
                   className="checkbox"
-                  id="formal"
-                  key="formal"
+                  id="Formal"
+                  key="Formal"
                   name="Atttire"
                   onClick={[Function]}
                   type="checkbox"
-                  value="formal"
+                  value="Formal"
                 />
                 <label
-                  htmlFor="formal"
-                  key="formal-label"
+                  htmlFor="Formal"
+                  key="Formal-label"
                 >
-                  formal
+                  Formal
                 </label>
               </div>
             </div>

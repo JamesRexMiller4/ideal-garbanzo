@@ -89,6 +89,16 @@ describe('Utility Functions', () => {
     });
   });
 
+  describe('titleCase', () => {
+    it('should return a string that has title case applied', () => {
+      const string = 'WhErE iS mY sUpEr Suit';
+      const result = 'Where Is My Super Suit';
+      const titleCaseString = utilFunctions.titleCase(string);
+      console.log(titleCaseString)
+      expect(titleCaseString).toEqual(result)
+    });
+  });
+
   describe('filterByState', () => {
     it('should return all records if query is empty string', () => {
       const filteredResults = utilFunctions.filterByState(mockData, "", stateAbbreviations);
@@ -294,22 +304,7 @@ describe('Utility Functions', () => {
     });
 
     it('should return a new array with only records that include data from checkedBoxes array', () => {
-      const result = [ { id: '00b35e1a-82b1-4988-b8b9-6df826db2818',
-      name: 'Matsuhisa',
-      address1: '303 E Main St',
-      city: 'Aspen',
-      state: 'CO',
-      zip: '81611',
-      lat: '39.190723',
-      long: '-106.82031',
-      telephone: '(970) 544-6628',
-      tags:
-       'Social,Food and Dining,Restaurants,Japanese,Social,Food and Dining,Restaurants,Sushi',
-      website: 'http://www.matsuhisaaspen.com',
-      genre: 'Japanese,Sushi,Asian,Contemporary,Seafood',
-      hours: 'Open Daily 5:30 PM-9:00 PM',
-      attire: 'business casual' },
-    { id: 'f223fdd0-4adc-423e-9747-980a66c256ca',
+      const result = [ { id: 'f223fdd0-4adc-423e-9747-980a66c256ca',
       name: 'Old Hickory Steakhouse',
       address1: '201 Waterfront St',
       city: 'Oxon Hill',
@@ -341,11 +336,50 @@ describe('Utility Functions', () => {
       attire: 'business casual' } ];
 
 
-      const filteredResults = utilFunctions.filterByCheckboxes(mockData, ["Steak", "Sushi", "Pasta"]);
+      const filteredResults = utilFunctions.filterByCheckboxes(mockData, ["Steak"]);
       
 
       expect(filteredResults).toEqual(result);
-      expect(filteredResults.length).toEqual(3);
+      expect(filteredResults.length).toEqual(2);
+    });
+  });
+  describe('filterByAttire', () => {
+    it('should return all records if checkedBoxes is an empty array', () => {
+      const filteredResults = utilFunctions.filterByCheckboxes(mockData, []);
+      expect(filteredResults).toEqual(mockData);
+      expect(filteredResults.length).toEqual(5);
+    });
+
+    it('should return an empty array if no matches found', () => {
+      const filteredResults = utilFunctions.filterByCheckboxes(mockData, ["Clothing optional"]);
+      expect(filteredResults).toEqual([]);
+      expect(filteredResults.length).toEqual(0);
+    });
+
+    it('should return a new array with records that are included in checkedBoxes', () => {
+      const result = []
+      const filteredResults = utilFunctions.filterByCheckboxes(mockData, ["Formal"]);
+      expect(filteredResults).toEqual();
+      expect(filteredResults.length).toEqual(1);
+    });
+  });
+  describe('filterByTags', () => {
+    it.skip('should return all records if query is an empty string', () => {
+      const filteredResults = utilFunctions.filterByQuery(mockData, '');
+      expect(filteredResults).toEqual(mockData);
+      expect(filteredResults.length).toEqual(5);
+    });
+
+    it.skip('should return an empty array if no matches found', () => {
+      const filteredResults = utilFunctions.filterByQuery(mockData, "");
+      expect(filteredResults).toEqual([]);
+      expect(filteredResults.length).toEqual(0);
+    });
+
+    it.skip('should return an empty array if no matches found', () => {
+      const filteredResults = utilFunctions.filterByQuery(mockData, "");
+      expect(filteredResults).toEqual([]);
+      expect(filteredResults.length).toEqual(0);
     });
   });
 });

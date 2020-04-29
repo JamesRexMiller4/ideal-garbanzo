@@ -18,7 +18,7 @@ const App = () => {
       let cleanedData = data.map(restaurant => {
         return {
           id: restaurant["id"],
-          name: restaurant["name"],
+          name: utilFunctions.titleCase(restaurant["name"]),
           address1: restaurant["address1"],
           city: restaurant["city"],
           state: restaurant["state"],
@@ -28,13 +28,12 @@ const App = () => {
           website: restaurant["website"],
           genre: restaurant["genre"],
           hours: restaurant["hours"],
-          attire: restaurant["attire"]
+          attire: utilFunctions.titleCase(restaurant["attire"])
         }
       });
       
-      setData(cleanedData)
-      setResults(utilFunctions.alphabatizeResults(data))
-    })
+      return setData(cleanedData)
+    }).then(cleanedData => setResults(utilFunctions.alphabatizeResults(data)))
     .catch(error => setError(error))
   }, []);
 
