@@ -8,47 +8,53 @@ import upArrow from '../../icons/upArrow.svg';
 import stateAbbreviations from '../../data/stateAbbreviations.js';
 
 const Form = ({ data, resetResults, setFilteredResults }) => {
-  const [ query, setQuery ] = useState('');
-  const [ selectedState, setSelectedState ] = useState('');
-  const [ advancedSearch, setAdvancedSearch ] = useState(false);
-  const [ checkedBoxes, setCheckedBoxes ] = useState([]);
+  const [ formState, setFormState ] = useState({
+    query: '',
+    selectedState: '',
+    advancedSearch: false,
+    checkedBoxes: []
+  })
 
   useEffect(() => {
-    if (advancedSearch) {
+    if (formState.advancedSearch) {
       let boxes = Array.from(document.querySelectorAll('.checkbox'))
       
       boxes.forEach(box => {
-        if (checkedBoxes.includes(box.value)) {
+        if (formState.checkedBoxes.includes(box.value)) {
           box.checked = true
         }
       })
     }
-  }, [advancedSearch, checkedBoxes])
+  }, [formState.advancedSearch, formState.checkedBoxes])
 
   const handleChange = (e) => {
-    setQuery(e.target.value);
+    setFormState({...formState, query: e.target.value});
   };
 
   const handleClick = (e) => {
-    setAdvancedSearch(!advancedSearch);
+    setFormState({...formState, advancedSearch: !formState.advancedSearch});
   };
 
   const handleCheckBoxClick = (e) => {
-    if (checkedBoxes.includes(e.target.value)) {
+    if (formState.checkedBoxes.includes(e.target.value)) {
       e.target.checked = false
-      const filteredResults = checkedBoxes.filter(val => val !== e.target.value)
-      setCheckedBoxes(filteredResults)
-    } else setCheckedBoxes([...checkedBoxes, e.target.value])
+      const filteredResults = formState.checkedBoxes.filter(val => val !== e.target.value)
+      setFormState({...formState, checkedBoxes: filteredResults})
+    } else setFormState({...formState, checkedBoxes: [...formState.checkedBoxes, e.target.value]})
   }
 
   const handleStateSelection = (e) => {
-    setFilteredResults(data, query, e.target.value, stateAbbreviations, checkedBoxes)
-    setSelectedState(e.target.value)
+    setFilteredResults(data, formState.query, e.target.value, stateAbbreviations, formState.checkedBoxes)
+    setFormState({...formState, selectedState: e.target.value})
   }
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setFilteredResults(data, query, selectedState, stateAbbreviations, checkedBoxes);
+    setFilteredResults(data,
+      formState.query,
+      formState.selectedState,
+      stateAbbreviations,
+      formState.checkedBoxes);
   }
 
   const generateStateOptions = () => {
@@ -104,28 +110,31 @@ const Form = ({ data, resetResults, setFilteredResults }) => {
       <section className='regular-search-section'>
         <div className='select-state-div'>
           <label htmlFor='select-state'>Filter by State</label>
-          <select id='select-state' name='select' value={selectedState}
+          <select id='select-state' name='select' value={formState.selectedState}
             onChange={(e) => handleStateSelection(e)}>
               {generateStateOptions()}
           </select>
         </div>
         <div className='search-bar-div'>
-          <input id='search-bar' type='text' value={query} 
+          <input id='search-bar' type='text' value={formState.query} 
           placeholder="Search Bar" onChange={handleChange}/>
-          <img className="clear-icon" src={close} alt="clear" onClick={() => resetResults(setQuery, setSelectedState, setCheckedBoxes)} />
-          <img className="search-icon"src={search} alt="search" 
-          onClick={() => setFilteredResults(data, query, selectedState, stateAbbreviations, checkedBoxes)} />
+          <img className="clear-icon" src={close} alt="clear" onClick={() => resetResults(setFormState)} />
+          <img className="search-icon" src={search} alt="search" 
+          onClick={() => setFilteredResults(data, formState.query,
+           formState.selectedState, stateAbbreviations, formState.checkedBoxes)} />
         </div>
         <div className='advanced-search-div'>
           <h3>Advanced Search</h3>
-          <img id='advanced-search-btn' src={advancedSearch ? upArrow : downArrow } 
-          alt={advancedSearch ? "collapse" : "expand" }
+          <img id='advanced-search-btn' src={formState.advancedSearch ? upArrow : downArrow } 
+          alt={formState.advancedSearch ? "collapse" : "expand" }
           onClick={handleClick} />
         </div>
       </section>
       <section className='advanced-search-section'>
-        <div className={advancedSearch ? 'filters-fieldsets-div exposed' : 'filters-fieldsets-div'}>
-          {advancedSearch && advancedSearchFilters()}
+        <div className={formState.advancedSearch ?
+          'filters-fieldsets-div exposed'
+          : 'filters-fieldsets-div'}>
+          {formState.advancedSearch && advancedSearchFilters()}
         </div>
       </section>
     </form> 

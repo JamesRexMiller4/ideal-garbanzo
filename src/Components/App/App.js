@@ -43,12 +43,14 @@ const App = () => {
     .catch(error => setAppState({...appState, error: error}))
   }, []);
 
-  const resetResults = (setQuery, setSelectedState, setCheckedBoxes) => {
+  const resetResults = (setFormState) => {
     setAppState({...appState, results: utilFunctions.alphabatizeResults(appState.data), page: 1})
-
-    setQuery('');
-    setSelectedState('');
-    setCheckedBoxes([]);
+    setFormState({
+      query: '',
+      selectedState: '',
+      advancedSearch: false,
+      checkedBoxes: []
+    })
   };
 
   const setFilteredResults = (resultsData, query, selectedState, states, checkedBoxes) => {
