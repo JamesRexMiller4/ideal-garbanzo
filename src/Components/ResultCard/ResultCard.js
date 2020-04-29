@@ -7,12 +7,12 @@ const ResultCard = ({result}) => {
   const generateGenreTags = (genres) => {
     let splitUpGenres = genres.split(',');
     splitUpGenres = splitUpGenres.filter((a, b) => splitUpGenres.indexOf(a) === b)
-    return splitUpGenres.map(genre => <button key={genre} className='genre-tag-btn'>{genre}</button>);
+    return splitUpGenres.map((genre, idx) => <button key={idx} className='genre-tag-btn'>{genre}</button>);
   };
 
   const generateHoursOfOperation = (hours) => {
     let splitUpHours = hours.split(';');
-    return splitUpHours.map(hour => <h5>{hour}</h5>)
+    return splitUpHours.map((hour, idx) => <h5 key={idx}>{hour}</h5>)
   }
 
 
