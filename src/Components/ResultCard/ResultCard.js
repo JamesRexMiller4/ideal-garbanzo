@@ -1,27 +1,50 @@
 import React, { useState } from 'react';
 import './ResultCard.scss';
 
-const ResultCard = (props) => {
-  const [ active, setActive ] = useState(false)
+const ResultCard = ({result}) => {
+  const [ active, setActive ] = useState(false);
+
+  const generateGenreTags = (genres) => {
+    let splitUpGenres = genres.split(',');
+    return splitUpGenres.map(genre => <button className='genre-tag-btn'>{genre}</button>);
+  };
+
 
   return ( 
-    <article>
-      <h3>Restuarant name</h3>
-      <h3>Resaurant city</h3>
-      <h3>Restaurant state</h3>
-      <h3>Restaurant phone</h3>
-      <h3>Restaurant Genres</h3>
-      <ul>
-        <li>Genre 1</li>
-        <li>Genre 2</li>
-        <li>Genre 13</li>
-      </ul>
-      { active && (
+    <article onClick={() => setActive(!active)}>
+      <section className='result-card-section'>
         <div>
-          <h4>Additional Info</h4>
+          <h3 className='result-card-h3'>{result.name}</h3>
+          <div>
+            <h4><span>{result.city + ', ' + result.state}</span></h4>
+          </div>
+          <h3>{result.phone}</h3>
         </div>
-        )
-      }
+        <div>
+          {generateGenreTags(result.genre)}
+        </div>
+      </section>
+      { active && (
+        <div className='additional-info-div'>
+          <h3>Additional Info</h3>
+          <section>
+            <div>
+              <h4>Address:</h4>
+              <h5>{result.address1}</h5>
+              <h5>{result.city + ", " + result.state}</h5>
+              <h5>{result.zip}</h5>
+            </div>
+            <div>
+              <h4>Phone:</h4>
+              <h5>{result.telephone}</h5>
+            </div>
+            <div className='tags-container-div'>
+              <h4>Tags:</h4>
+              {generateGenreTags(result.tags)}
+            </div>
+          </section>
+        </div>
+        )}
     </article>
   );
 }
