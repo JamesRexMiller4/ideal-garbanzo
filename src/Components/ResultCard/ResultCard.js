@@ -6,6 +6,8 @@ const ResultCard = ({result}) => {
 
   const generateGenreTags = (genres) => {
     let splitUpGenres = genres.split(',');
+    // remove duplicates
+    splitUpGenres = splitUpGenres.filter((a, b) => splitUpGenres.indexOf(a) === b)
     return splitUpGenres.map(genre => <button key={Date.now() * Math.random()} className='genre-tag-btn'>{genre}</button>);
   };
 
