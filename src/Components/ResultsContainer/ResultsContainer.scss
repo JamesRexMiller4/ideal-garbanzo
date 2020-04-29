@@ -2,10 +2,29 @@
 
 .results-container-section {
   display: flex;
+  height: 70vh;
+  overflow: scroll;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   background-color: lighten($base-blue, 80);
-  border-top: 1px solid;
+  border-top: 3px solid;
   box-shadow: 8px 4px 2px -4px black;
+  padding: 2rem 0;
+}
+
+.results-pagination-div {
+  display: flex;
+
+  h2 {
+    color: black;
+    padding: 0 2rem;
+  }
+
+  img {
+    width: 1.5rem;
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }

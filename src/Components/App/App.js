@@ -11,7 +11,6 @@ const App = () => {
   const [ data, setData ] = useState([]);
   const [ error, setError ] = useState('');  
   const [ results, setResults ] = useState([]);
-  const [ page, setPage ] = useState(1);
   
   useEffect(() => {
     getData().then(data => {
@@ -37,13 +36,6 @@ const App = () => {
     })
     .catch(error => setError(error))
   }, []);
-
-  const paginateResults = (resultData) => {
-    const start = (page - 1) * 10;
-    const end = start + 10;
-
-    return resultData.slice(start, end);
-  }
 
   const resetResults = (setQuery) => {
     setResults(alphabatizeResults(data));
@@ -100,7 +92,7 @@ const App = () => {
         results={results}
         resetResults={resetResults}
         setFilteredResults={setFilteredResults}/>
-      { data ? <ResultsContainer results={paginateResults(results)}/> 
+      { data ? <ResultsContainer results={results}/> 
         : <h2>{error}</h2> }
       <Footer />
     </div>
