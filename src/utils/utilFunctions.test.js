@@ -177,9 +177,26 @@ describe('Utility Functions', () => {
     });
 
     it('should return a new array with only records that include the query string', () => {
-      const filteredResults = utilFunctions.filterByQuery(mockData, "Narnia");
-      expect(filteredResults).toEqual([]);
-      expect(filteredResults.length).toEqual(0);
+      const result = [ { id: 'cd273a24-f8de-44f6-8add-028e22229293',
+      name: 'Boston Lobster Feast',
+      address1: '8731 International Dr',
+      city: 'Orlando',
+      state: 'FL',
+      zip: '32819',
+      lat: '28.43897',
+      long: '-81.470707',
+      telephone: '(407) 248-8606',
+      tags:
+       'Social,Food and Dining,Restaurants,Seafood,Social,Food and Dining,Restaurants,American',
+      website: 'http://www.bostonlobsterfeast.com',
+      genre: 'Seafood,International,American,Oysters,Cafe',
+      hours: 'Mon-Fri 4:00 PM-10:00 PM; Sat-Sun 2:00 PM-10:00 PM',
+      attire: 'Casual' } ]
+
+
+      const filteredResults = utilFunctions.filterByQuery(mockData, "Orlando");
+      expect(filteredResults).toEqual(result);
+      expect(filteredResults.length).toEqual(1);
     });
   });
 
@@ -190,7 +207,7 @@ describe('Utility Functions', () => {
       expect(filteredResults.length).toEqual(5);
     });
 
-    it('should return an empty array if no results are found', () => {
+    it('should return an empty array if no matches found', () => {
       const filteredResults = utilFunctions.filterByQuery(mockData, "Film Noir");
       expect(filteredResults).toEqual([]);
       expect(filteredResults.length).toEqual(0);
@@ -263,5 +280,72 @@ describe('Utility Functions', () => {
       expect(filteredResults.length).toEqual(4);
     });
   });
+  describe('filterByCheckboxes', () => {
+    it('should return all records if the checkedBoxes array is empty', () => {
+      const filteredResults = utilFunctions.filterByCheckboxes(mockData, []);
+      expect(filteredResults).toEqual(mockData);
+      expect(filteredResults.length).toEqual(5);
+    });
 
+    it('should return an empty array if no matches found', () => {
+      const filteredResults = utilFunctions.filterByCheckboxes(mockData, ["Peanut Butter", "Toast", "YumYumYum"]);
+      expect(filteredResults).toEqual([]);
+      expect(filteredResults.length).toEqual(0);
+    });
+
+    it('should return a new array with only records that include data from checkedBoxes array', () => {
+      const result = [ { id: '00b35e1a-82b1-4988-b8b9-6df826db2818',
+      name: 'Matsuhisa',
+      address1: '303 E Main St',
+      city: 'Aspen',
+      state: 'CO',
+      zip: '81611',
+      lat: '39.190723',
+      long: '-106.82031',
+      telephone: '(970) 544-6628',
+      tags:
+       'Social,Food and Dining,Restaurants,Japanese,Social,Food and Dining,Restaurants,Sushi',
+      website: 'http://www.matsuhisaaspen.com',
+      genre: 'Japanese,Sushi,Asian,Contemporary,Seafood',
+      hours: 'Open Daily 5:30 PM-9:00 PM',
+      attire: 'business casual' },
+    { id: 'f223fdd0-4adc-423e-9747-980a66c256ca',
+      name: 'Old Hickory Steakhouse',
+      address1: '201 Waterfront St',
+      city: 'Oxon Hill',
+      state: 'MD',
+      zip: '20745',
+      lat: '38.782098',
+      long: '-77.017492',
+      telephone: '(301) 965-4000',
+      tags: 'Social,Food and Dining,Restaurants,Steakhouses',
+      website: 'http://www.gaylordnational.com',
+      genre: 'Steak,American,Contemporary,Seafood,Cafe',
+      hours: 'Open Daily 5:30 PM-10:00 PM',
+      attire: 'business casual' },
+    { id: '0b4bfe46-3e60-4de4-82ba-2dd8e5d46b56',
+      name: 'The Capital Grille',
+      address1: '500 Crescent Ct',
+      city: 'Dallas',
+      state: 'TX',
+      zip: '75201',
+      lat: '32.794749',
+      long: '-96.804099',
+      telephone: '(214) 303-0500',
+      tags:
+       'Social,Food and Dining,Restaurants,Steakhouses,Social,Food and Dining,Restaurants,American',
+      website: 'http://www.thecapitalgrille.com',
+      genre: 'Steak,American',
+      hours:
+       'Mon-Thu 11:00 AM-10:00 PM; Fri 11:00 AM-11:00 PM; Sat 5:00 PM-11:00 PM; Sun 5:00 PM-9:00 PM',
+      attire: 'business casual' } ];
+
+
+      const filteredResults = utilFunctions.filterByCheckboxes(mockData, ["Steak", "Sushi", "Pasta"]);
+      
+
+      expect(filteredResults).toEqual(result);
+      expect(filteredResults.length).toEqual(3);
+    });
+  });
 });
