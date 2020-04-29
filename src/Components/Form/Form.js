@@ -84,7 +84,7 @@ const Form = ({ data, resetResults, setFilteredResults }) => {
       <section className='regular-search-section'>
         <div className='select-state-div'>
           <label htmlFor='select-state'>Filter by State</label>
-          <select id='select-state' name='select'
+          <select id='select-state' name='select' value={selectedState}
             onChange={(e) => handleStateSelection(e)}>
               {generateStateOptions()}
           </select>
