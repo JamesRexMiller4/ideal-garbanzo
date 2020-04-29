@@ -1,0 +1,171 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ResultCard should render differently when ResultCard is clicked 1`] = `
+<article
+  onClick={[Function]}
+>
+  <section
+    className="result-card-section"
+  >
+    <div>
+      <h3
+        className="result-card-h3"
+      >
+        Old Hickory Steakhouse
+      </h3>
+      <h4>
+        Oxon Hill, MD
+      </h4>
+      <h3 />
+    </div>
+    <div>
+      <button
+        className="genre-tag-btn"
+        key="Steak"
+      >
+        Steak
+      </button>
+      <button
+        className="genre-tag-btn"
+        key="American"
+      >
+        American
+      </button>
+      <button
+        className="genre-tag-btn"
+        key="Contemporary"
+      >
+        Contemporary
+      </button>
+      <button
+        className="genre-tag-btn"
+        key="Seafood"
+      >
+        Seafood
+      </button>
+      <button
+        className="genre-tag-btn"
+        key="Cafe"
+      >
+        Cafe
+      </button>
+    </div>
+  </section>
+  <div
+    className="additional-info-div"
+  >
+    <h3>
+      Additional Info
+    </h3>
+    <section>
+      <div>
+        <h4>
+          Address:
+        </h4>
+        <h5>
+          201 Waterfront St
+        </h5>
+        <h5>
+          Oxon Hill, MD
+        </h5>
+        <h5>
+          20745
+        </h5>
+      </div>
+      <div>
+        <h4>
+          Phone:
+        </h4>
+        <h5>
+          (301) 965-4000
+        </h5>
+      </div>
+      <div
+        className="tags-container-div"
+      >
+        <h4>
+          Tags:
+        </h4>
+        <button
+          className="genre-tag-btn"
+          key="Social"
+        >
+          Social
+        </button>
+        <button
+          className="genre-tag-btn"
+          key="Food and Dining"
+        >
+          Food and Dining
+        </button>
+        <button
+          className="genre-tag-btn"
+          key="Restaurants"
+        >
+          Restaurants
+        </button>
+        <button
+          className="genre-tag-btn"
+          key="Steakhouses"
+        >
+          Steakhouses
+        </button>
+      </div>
+    </section>
+  </div>
+</article>
+`;
+
+exports[`ResultCard should render the snapshot 1`] = `
+<article
+  onClick={[Function]}
+>
+  <section
+    className="result-card-section"
+  >
+    <div>
+      <h3
+        className="result-card-h3"
+      >
+        Old Hickory Steakhouse
+      </h3>
+      <h4>
+        Oxon Hill, MD
+      </h4>
+      <h3 />
+    </div>
+    <div>
+      <button
+        className="genre-tag-btn"
+        key="Steak"
+      >
+        Steak
+      </button>
+      <button
+        className="genre-tag-btn"
+        key="American"
+      >
+        American
+      </button>
+      <button
+        className="genre-tag-btn"
+        key="Contemporary"
+      >
+        Contemporary
+      </button>
+      <button
+        className="genre-tag-btn"
+        key="Seafood"
+      >
+        Seafood
+      </button>
+      <button
+        className="genre-tag-btn"
+        key="Cafe"
+      >
+        Cafe
+      </button>
+    </div>
+  </section>
+</article>
+`;
