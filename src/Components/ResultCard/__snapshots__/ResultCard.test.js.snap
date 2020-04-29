@@ -21,31 +21,31 @@ exports[`ResultCard should render differently when ResultCard is clicked 1`] = `
     <div>
       <button
         className="genre-tag-btn"
-        key="679199950804.1945"
+        key="0"
       >
         Steak
       </button>
       <button
         className="genre-tag-btn"
-        key="618223098624.8542"
+        key="1"
       >
         American
       </button>
       <button
         className="genre-tag-btn"
-        key="197330976093.94327"
+        key="2"
       >
         Contemporary
       </button>
       <button
         className="genre-tag-btn"
-        key="897193641942.3282"
+        key="3"
       >
         Seafood
       </button>
       <button
         className="genre-tag-btn"
-        key="47806346992.00138"
+        key="4"
       >
         Cafe
       </button>
@@ -86,8 +86,20 @@ exports[`ResultCard should render differently when ResultCard is clicked 1`] = `
         <h4>
           Hours of Operation:
         </h4>
-        <h5>
+        <h5
+          key="0"
+        >
           Open Daily 5:30 PM-10:00 PM
+        </h5>
+      </div>
+      <div
+        className="attire-div"
+      >
+        <h4>
+          Attire:
+        </h4>
+        <h5>
+          business casual
         </h5>
       </div>
       <div
@@ -98,25 +110,25 @@ exports[`ResultCard should render differently when ResultCard is clicked 1`] = `
         </h4>
         <button
           className="genre-tag-btn"
-          key="1466322536778.6714"
+          key="0"
         >
           Social
         </button>
         <button
           className="genre-tag-btn"
-          key="195548699037.32477"
+          key="1"
         >
           Food and Dining
         </button>
         <button
           className="genre-tag-btn"
-          key="1489214701997.1846"
+          key="2"
         >
           Restaurants
         </button>
         <button
           className="genre-tag-btn"
-          key="1141115244979.5771"
+          key="3"
         >
           Steakhouses
         </button>
@@ -147,31 +159,31 @@ exports[`ResultCard should render the snapshot 1`] = `
     <div>
       <button
         className="genre-tag-btn"
-        key="434503411844.36865"
+        key="0"
       >
         Steak
       </button>
       <button
         className="genre-tag-btn"
-        key="720015119374.6793"
+        key="1"
       >
         American
       </button>
       <button
         className="genre-tag-btn"
-        key="1112164907789.0022"
+        key="2"
       >
         Contemporary
       </button>
       <button
         className="genre-tag-btn"
-        key="9178867111.464867"
+        key="3"
       >
         Seafood
       </button>
       <button
         className="genre-tag-btn"
-        key="1125924972531.1506"
+        key="4"
       >
         Cafe
       </button>

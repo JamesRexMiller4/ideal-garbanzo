@@ -1,0 +1,537 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should render the snapshot 1`] = `
+<App>
+  <div
+    className="App"
+  >
+    <Header>
+      <header>
+        <div
+          className="logo-div"
+        >
+          <h1>
+            Spectrum
+          </h1>
+          <img
+            alt="play button"
+            className="spectrum-icon"
+            src="play.svg"
+          />
+        </div>
+        <h2
+          className="app-title"
+        >
+          Ideal Garbanzo Service
+        </h2>
+      </header>
+    </Header>
+    <Form
+      data={Array []}
+      resetResults={[Function]}
+      setFilteredResults={[Function]}
+    >
+      <form
+        className="main-form"
+        onSubmit={[Function]}
+      >
+        <section
+          className="regular-search-section"
+        >
+          <div
+            className="select-state-div"
+          >
+            <label
+              htmlFor="select-state"
+            >
+              Filter by State
+            </label>
+            <select
+              id="select-state"
+              name="select"
+              onChange={[Function]}
+              value=""
+            >
+              <option
+                id=""
+                key=""
+                value=""
+              />
+              <option
+                id="Alabama"
+                key="Alabama"
+                value="Alabama"
+              >
+                Alabama
+              </option>
+              <option
+                id="Alaska"
+                key="Alaska"
+                value="Alaska"
+              >
+                Alaska
+              </option>
+              <option
+                id="Arizona"
+                key="Arizona"
+                value="Arizona"
+              >
+                Arizona
+              </option>
+              <option
+                id="Arkansas"
+                key="Arkansas"
+                value="Arkansas"
+              >
+                Arkansas
+              </option>
+              <option
+                id="California"
+                key="California"
+                value="California"
+              >
+                California
+              </option>
+              <option
+                id="Colorado"
+                key="Colorado"
+                value="Colorado"
+              >
+                Colorado
+              </option>
+              <option
+                id="Connecticut"
+                key="Connecticut"
+                value="Connecticut"
+              >
+                Connecticut
+              </option>
+              <option
+                id="Delaware"
+                key="Delaware"
+                value="Delaware"
+              >
+                Delaware
+              </option>
+              <option
+                id="Florida"
+                key="Florida"
+                value="Florida"
+              >
+                Florida
+              </option>
+              <option
+                id="Georgia"
+                key="Georgia"
+                value="Georgia"
+              >
+                Georgia
+              </option>
+              <option
+                id="Hawaii"
+                key="Hawaii"
+                value="Hawaii"
+              >
+                Hawaii
+              </option>
+              <option
+                id="Idaho"
+                key="Idaho"
+                value="Idaho"
+              >
+                Idaho
+              </option>
+              <option
+                id="Illinois"
+                key="Illinois"
+                value="Illinois"
+              >
+                Illinois
+              </option>
+              <option
+                id="Indiana"
+                key="Indiana"
+                value="Indiana"
+              >
+                Indiana
+              </option>
+              <option
+                id="Iowa"
+                key="Iowa"
+                value="Iowa"
+              >
+                Iowa
+              </option>
+              <option
+                id="Kansas"
+                key="Kansas"
+                value="Kansas"
+              >
+                Kansas
+              </option>
+              <option
+                id="Kentucky"
+                key="Kentucky"
+                value="Kentucky"
+              >
+                Kentucky
+              </option>
+              <option
+                id="Louisiana"
+                key="Louisiana"
+                value="Louisiana"
+              >
+                Louisiana
+              </option>
+              <option
+                id="Maine"
+                key="Maine"
+                value="Maine"
+              >
+                Maine
+              </option>
+              <option
+                id="Maryland"
+                key="Maryland"
+                value="Maryland"
+              >
+                Maryland
+              </option>
+              <option
+                id="Massachusetts"
+                key="Massachusetts"
+                value="Massachusetts"
+              >
+                Massachusetts
+              </option>
+              <option
+                id="Michigan"
+                key="Michigan"
+                value="Michigan"
+              >
+                Michigan
+              </option>
+              <option
+                id="Minnesota"
+                key="Minnesota"
+                value="Minnesota"
+              >
+                Minnesota
+              </option>
+              <option
+                id="Mississippi"
+                key="Mississippi"
+                value="Mississippi"
+              >
+                Mississippi
+              </option>
+              <option
+                id="Missouri"
+                key="Missouri"
+                value="Missouri"
+              >
+                Missouri
+              </option>
+              <option
+                id="Montana"
+                key="Montana"
+                value="Montana"
+              >
+                Montana
+              </option>
+              <option
+                id="Nebraska"
+                key="Nebraska"
+                value="Nebraska"
+              >
+                Nebraska
+              </option>
+              <option
+                id="Nevada"
+                key="Nevada"
+                value="Nevada"
+              >
+                Nevada
+              </option>
+              <option
+                id="New Hampshire"
+                key="New Hampshire"
+                value="New Hampshire"
+              >
+                New Hampshire
+              </option>
+              <option
+                id="New Jersey"
+                key="New Jersey"
+                value="New Jersey"
+              >
+                New Jersey
+              </option>
+              <option
+                id="New Mexico"
+                key="New Mexico"
+                value="New Mexico"
+              >
+                New Mexico
+              </option>
+              <option
+                id="New York"
+                key="New York"
+                value="New York"
+              >
+                New York
+              </option>
+              <option
+                id="North Carolina"
+                key="North Carolina"
+                value="North Carolina"
+              >
+                North Carolina
+              </option>
+              <option
+                id="North Dakota"
+                key="North Dakota"
+                value="North Dakota"
+              >
+                North Dakota
+              </option>
+              <option
+                id="Ohio"
+                key="Ohio"
+                value="Ohio"
+              >
+                Ohio
+              </option>
+              <option
+                id="Oklahoma"
+                key="Oklahoma"
+                value="Oklahoma"
+              >
+                Oklahoma
+              </option>
+              <option
+                id="Oregon"
+                key="Oregon"
+                value="Oregon"
+              >
+                Oregon
+              </option>
+              <option
+                id="Pennsylvania"
+                key="Pennsylvania"
+                value="Pennsylvania"
+              >
+                Pennsylvania
+              </option>
+              <option
+                id="Rhode Island"
+                key="Rhode Island"
+                value="Rhode Island"
+              >
+                Rhode Island
+              </option>
+              <option
+                id="South Carolina"
+                key="South Carolina"
+                value="South Carolina"
+              >
+                South Carolina
+              </option>
+              <option
+                id="South Dakota"
+                key="South Dakota"
+                value="South Dakota"
+              >
+                South Dakota
+              </option>
+              <option
+                id="Tennessee"
+                key="Tennessee"
+                value="Tennessee"
+              >
+                Tennessee
+              </option>
+              <option
+                id="Texas"
+                key="Texas"
+                value="Texas"
+              >
+                Texas
+              </option>
+              <option
+                id="Utah"
+                key="Utah"
+                value="Utah"
+              >
+                Utah
+              </option>
+              <option
+                id="Vermont"
+                key="Vermont"
+                value="Vermont"
+              >
+                Vermont
+              </option>
+              <option
+                id="Virginia"
+                key="Virginia"
+                value="Virginia"
+              >
+                Virginia
+              </option>
+              <option
+                id="Washington"
+                key="Washington"
+                value="Washington"
+              >
+                Washington
+              </option>
+              <option
+                id="West Virginia"
+                key="West Virginia"
+                value="West Virginia"
+              >
+                West Virginia
+              </option>
+              <option
+                id="Wisconsin"
+                key="Wisconsin"
+                value="Wisconsin"
+              >
+                Wisconsin
+              </option>
+              <option
+                id="Wyoming"
+                key="Wyoming"
+                value="Wyoming"
+              >
+                Wyoming
+              </option>
+            </select>
+          </div>
+          <div
+            className="search-bar-div"
+          >
+            <input
+              id="search-bar"
+              onChange={[Function]}
+              placeholder="Search Bar"
+              type="text"
+              value=""
+            />
+            <img
+              alt="clear"
+              className="clear-icon"
+              onClick={[Function]}
+              src="close.svg"
+            />
+            <img
+              alt="search"
+              className="search-icon"
+              onClick={[Function]}
+              src="search.svg"
+            />
+          </div>
+          <div
+            className="advanced-search-div"
+          >
+            <h3>
+              Advanced Search
+            </h3>
+            <img
+              alt="expand"
+              id="advanced-search-btn"
+              onClick={[Function]}
+              src="downArrow.svg"
+            />
+          </div>
+        </section>
+        <section
+          className="advanced-search-section"
+        >
+          <div
+            className="filters-fieldsets-div"
+          />
+        </section>
+      </form>
+    </Form>
+    <ResultsContainer
+      results={Array []}
+      setState={[Function]}
+      state={
+        Object {
+          "data": Array [],
+          "error": "",
+          "page": 1,
+          "results": Array [],
+        }
+      }
+    >
+      <section
+        className="results-container-section"
+      >
+        <div
+          className="results-pagination-div"
+        >
+          <img
+            alt="previous-results"
+            id="left-arrow"
+            onClick={[Function]}
+            src="leftArrow.svg"
+          />
+          <h2>
+            Showing 1 of 1
+          </h2>
+          <img
+            alt="more-results"
+            id="right-arrow"
+            onClick={[Function]}
+            src="next.svg"
+          />
+        </div>
+        <h2
+          className="error"
+        >
+          No results, please try again
+        </h2>
+      </section>
+    </ResultsContainer>
+    <Footer>
+      <footer>
+        <div
+          className="logo-div"
+        >
+          <h1>
+            Spectrum
+          </h1>
+          <img
+            alt="play"
+            className="spectrum-icon"
+            src="play.svg"
+          />
+        </div>
+        <img
+          alt="facebook"
+          className="social-icon"
+          src="facebook.svg"
+        />
+        <img
+          alt="twitter"
+          className="social-icon"
+          src="twitter.svg"
+        />
+        <img
+          alt="instagram"
+          className="social-icon"
+          src="instagram.svg"
+        />
+        <img
+          alt="youtube"
+          className="social-icon"
+          src="youtube.svg"
+        />
+      </footer>
+    </Footer>
+  </div>
+</App>
+`;
