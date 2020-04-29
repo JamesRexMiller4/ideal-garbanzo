@@ -8,7 +8,9 @@ describe('App', () => {
   
     });
   
-    it.skip('should be able to search by name, city, or genre, ')
+    it.skip('should be able to search by name, city, or genre', () => {
+
+    });
     
     });
   
@@ -25,7 +27,9 @@ describe('App', () => {
       
     });
   
-    it.skip('should be able to filter by city')
-    
+    it.skip('should be able to filter by city', () => {
+
     });
+    
+  });
 });

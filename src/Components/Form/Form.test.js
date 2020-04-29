@@ -13,7 +13,6 @@ describe('Form', () => {
 
     wrapper = mount(<Form
       data={mockData}
-      results={alphabatizeResults(mockData)}
       resetResults={mockResetResults}
       setFilteredResults={mockSetFilteredResults}
       />);
