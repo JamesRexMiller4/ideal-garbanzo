@@ -21,6 +21,11 @@ article {
   .result-card-section {
     display: flex;
     justify-content: space-between;
+
+    h4 {
+      margin-top: .2rem;
+      font-style: italic;
+    }
   }
 
   h3 {
