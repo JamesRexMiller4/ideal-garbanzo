@@ -21,31 +21,31 @@ exports[`ResultCard should render differently when ResultCard is clicked 1`] = `
     <div>
       <button
         className="genre-tag-btn"
-        key="Steak"
+        key="0"
       >
         Steak
       </button>
       <button
         className="genre-tag-btn"
-        key="American"
+        key="1"
       >
         American
       </button>
       <button
         className="genre-tag-btn"
-        key="Contemporary"
+        key="2"
       >
         Contemporary
       </button>
       <button
         className="genre-tag-btn"
-        key="Seafood"
+        key="3"
       >
         Seafood
       </button>
       <button
         className="genre-tag-btn"
-        key="Cafe"
+        key="4"
       >
         Cafe
       </button>
@@ -86,7 +86,9 @@ exports[`ResultCard should render differently when ResultCard is clicked 1`] = `
         <h4>
           Hours of Operation:
         </h4>
-        <h5>
+        <h5
+          key="0"
+        >
           Open Daily 5:30 PM-10:00 PM
         </h5>
       </div>
@@ -108,25 +110,25 @@ exports[`ResultCard should render differently when ResultCard is clicked 1`] = `
         </h4>
         <button
           className="genre-tag-btn"
-          key="Social"
+          key="0"
         >
           Social
         </button>
         <button
           className="genre-tag-btn"
-          key="Food and Dining"
+          key="1"
         >
           Food and Dining
         </button>
         <button
           className="genre-tag-btn"
-          key="Restaurants"
+          key="2"
         >
           Restaurants
         </button>
         <button
           className="genre-tag-btn"
-          key="Steakhouses"
+          key="3"
         >
           Steakhouses
         </button>
@@ -157,31 +159,31 @@ exports[`ResultCard should render the snapshot 1`] = `
     <div>
       <button
         className="genre-tag-btn"
-        key="Steak"
+        key="0"
       >
         Steak
       </button>
       <button
         className="genre-tag-btn"
-        key="American"
+        key="1"
       >
         American
       </button>
       <button
         className="genre-tag-btn"
-        key="Contemporary"
+        key="2"
       >
         Contemporary
       </button>
       <button
         className="genre-tag-btn"
-        key="Seafood"
+        key="3"
       >
         Seafood
       </button>
       <button
         className="genre-tag-btn"
-        key="Cafe"
+        key="4"
       >
         Cafe
       </button>

@@ -89,6 +89,15 @@ describe('Utility Functions', () => {
     });
   });
 
+  describe('removeDuplicates', () => {
+    it('should remove duplicate values from an array', () => {
+      const duplicates = 'Social,Food and Dining,Restaurants,Seafood,Social,Food and Dining,Restaurants,American';
+      const result = 'Social,Food and Dining,Restaurants,Seafood,American';
+      const uniqueVals = utilFunctions.removeDuplicates(duplicates);
+      expect(uniqueVals).toEqual(result);
+    });
+  });
+
   describe('titleCase', () => {
     it('should return a string that has title case applied', () => {
       const string = 'WhErE iS mY sUpEr Suit';
@@ -99,7 +108,7 @@ describe('Utility Functions', () => {
   });
 
   describe('cleanData', () => {
-    it('should reformat data, title case name and attire values, and alphabatize results', () => {
+    it('should reformat data, Titlecase name and attire values, remove duplicates, and alphabatize results', () => {
       const result = [ { id: 'cd273a24-f8de-44f6-8add-028e22229293',
       name: 'Boston Lobster Feast',
       address1: '8731 International Dr',
@@ -108,7 +117,7 @@ describe('Utility Functions', () => {
       zip: '32819',
       telephone: '(407) 248-8606',
       tags:
-       'Social,Food and Dining,Restaurants,Seafood,Social,Food and Dining,Restaurants,American',
+       'Social,Food and Dining,Restaurants,Seafood,American',
       website: 'http://www.bostonlobsterfeast.com',
       genre: 'Seafood,International,American,Oysters,Cafe',
       hours: 'Mon-Fri 4:00 PM-10:00 PM; Sat-Sun 2:00 PM-10:00 PM',
@@ -133,7 +142,7 @@ describe('Utility Functions', () => {
       zip: '81611',
       telephone: '(970) 544-6628',
       tags:
-       'Social,Food and Dining,Restaurants,Japanese,Social,Food and Dining,Restaurants,Sushi',
+       'Social,Food and Dining,Restaurants,Japanese,Sushi',
       website: 'http://www.matsuhisaaspen.com',
       genre: 'Japanese,Sushi,Asian,Contemporary,Seafood',
       hours: 'Open Daily 5:30 PM-9:00 PM',
@@ -158,7 +167,7 @@ describe('Utility Functions', () => {
       zip: '75201',
       telephone: '(214) 303-0500',
       tags:
-       'Social,Food and Dining,Restaurants,Steakhouses,Social,Food and Dining,Restaurants,American',
+       'Social,Food and Dining,Restaurants,Steakhouses,American',
       website: 'http://www.thecapitalgrille.com',
       genre: 'Steak,American',
       hours:

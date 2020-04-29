@@ -6,7 +6,6 @@ const ResultCard = ({result}) => {
 
   const generateGenreTags = (genres) => {
     let splitUpGenres = genres.split(',');
-    splitUpGenres = splitUpGenres.filter((a, b) => splitUpGenres.indexOf(a) === b)
     return splitUpGenres.map((genre, idx) => <button key={idx} className='genre-tag-btn'>{genre}</button>);
   };
 

@@ -2,6 +2,11 @@ export const alphabatizeResults = (results) => {
   return results.sort((a, b) => a.name > b.name ? 1 : -1);
 };
 
+export const removeDuplicates = (string) => {
+  let arr = string.split(',')
+  return arr.filter((a, b) => arr.indexOf(a) === b).join(',')
+}
+
 export const titleCase = (string) => {
   let newString = string.toLowerCase().split(' ')
   return newString.map(word => word.replace(word[0], word[0].toUpperCase())).join(' ');
@@ -18,7 +23,7 @@ export const cleanData = (dataArr) => {
       state: restaurant["state"],
       zip: restaurant["zip"],
       telephone: restaurant["telephone"],
-      tags: restaurant["tags"],
+      tags: removeDuplicates(restaurant["tags"]),
       website: restaurant["website"],
       genre: restaurant["genre"],
       hours: restaurant["hours"],
