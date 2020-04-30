@@ -412,6 +412,11 @@ exports[`App should render the snapshot 1`] = `
           <div
             className="search-bar-div"
           >
+            <label
+              htmlFor="search-bar"
+            >
+              Search:
+            </label>
             <input
               id="search-bar"
               onChange={[Function]}

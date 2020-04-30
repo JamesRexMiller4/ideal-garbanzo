@@ -90,19 +90,14 @@ const Form = ({ data, resetResults, setFilteredResults }) => {
       )
     };
 
-    const recursivelyGenerateFieldsets = (parent, objKeyValue) => { 
+    const generateFieldsets = (parent, objKeyValue) => { 
       if (typeof parent[objKeyValue] === 'string') return makeACheckbox(parent[objKeyValue], parent);
       if (Array.isArray(parent[objKeyValue]) && objKeyValue !== 'states') {
         return makeFieldsets(parent, objKeyValue);
       }
-
-      const newParent = parent[objKeyValue];
-      const keys = Object.keys(newParent);
-      return keys.forEach(key => recursivelyGenerateFieldsets(newParent, key));
     };
-
     const legends = Object.keys(utilData);
-    return legends.map(key => recursivelyGenerateFieldsets(utilData, key));
+    return legends.map(key => generateFieldsets(utilData, key));
   };
 
   return (
