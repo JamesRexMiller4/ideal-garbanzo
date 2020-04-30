@@ -470,6 +470,11 @@ exports[`Form handleClick: should render a different snapshot if advancedSearch 
       <div
         className="search-bar-div"
       >
+        <label
+          htmlFor="search-bar"
+        >
+          Search:
+        </label>
         <input
           id="search-bar"
           onChange={[Function]}
@@ -1496,6 +1501,11 @@ exports[`Form should render the snapshot 1`] = `
       <div
         className="search-bar-div"
       >
+        <label
+          htmlFor="search-bar"
+        >
+          Search:
+        </label>
         <input
           id="search-bar"
           onChange={[Function]}
