@@ -116,6 +116,7 @@ const Form = ({ data, resetResults, setFilteredResults }) => {
           </select>
         </div>
         <div className='search-bar-div'>
+          <label htmlFor='search-bar'>Search:</label>
           <input id='search-bar' type='text' value={formState.query} 
           placeholder="Search Bar" onChange={handleChange}/>
           <img className="clear-icon" src={close} alt="clear" onClick={() => resetResults(setFormState)} />
