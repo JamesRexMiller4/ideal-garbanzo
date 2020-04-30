@@ -28,10 +28,11 @@
     .regular-search-section {
       display: flex;
       flex-direction: column;
+      justify-content: flex-start;
       
       .select-state-div {
         select {
-          height: 2vh;
+          height: 3vh;
         }
       }
       .search-bar-div {
@@ -151,7 +152,6 @@
       
       .select-state-div {
         display: flex;
-        flex-direction: column;
         select {
           height: 4vh;
         }
