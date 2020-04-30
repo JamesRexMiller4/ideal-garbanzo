@@ -1,84 +1,132 @@
-// Mobile layout Form
+@media screen 
+  and (min-device-width: 1000px) 
+  and (max-device-width: 1200px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (min-resolution: 192dpi) {
 
-// form {
-//   margin: 2rem;
-//   width: 100%;
-//   height: fit-content;
-//   text-align: center;
-//   padding: 1rem;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: space-between;
-//   align-items: flex-start;
-//   border: 1px solid grey;
+    .regular-search-section {
+      .select-state-div {
+        select {
+          height: 3vh;
+        }
+      }
+      .search-bar-div {
+        display: flex;
+        #search-bar {
+          width: 40vw;
+          height: 3vh;
+        }
+      }
+    }
+}
 
-//   select {
-//     width: fit-content;
-//     border: 1px solid;
-//   }
+@media screen 
+  and (min-device-width: 300px) 
+  and (max-device-width: 1000px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (min-resolution: 192dpi) {
+    .regular-search-section {
+      display: flex;
+      flex-direction: column;
+      
+      .select-state-div {
+        select {
+          height: 2vh;
+        }
+      }
+      .search-bar-div {
+        width: 30%;
+        display: flex;
+        #search-bar {
+          width: 40vw;
+          height: 2vh;
+        }
+      }
+    }
 
-//   input[type="text"] {
-//     width: 50vw;
-//     height: 4vh;
-//     border: 1px solid;
-//   }
-// }
+    img {
+      width: 2.5;
+      height: 2.5vh;
+    }
 
-// .regular-search-section {
-//     display: flex;
-//     width: inherit;
-//     height: 20vh;
-//     align-items: center;
-    
-//     .select-state-div {
-//       width: fit-content;
-//       height: 3vh;
-//       display: flex;
-//       justify-content: space-between;
-//       align-items: center;
-//       padding-right: 2rem;
-//     }
-//     .search-bar-div {
-//       width: 50%;
-//       display: flex;
-//     }
-// }
+    .advanced-search-section {
+      display: flex;
+      align-items: center;
 
-// .advanced-search-section {
-//   display: flex;
-//   flex-direction: column;
-// }
+      .fieldset-form-div {
+        display: flex;
+        .checkboxes-div {
+          width: 100%;
+          height: fit-content;
+          flex-flow: row wrap;
+        }
+        height: 10vh;
+      }
 
-// fieldset {
-//   width: fit-content;
-//   display: flex;
-//   justify-content: flex-start;
-//   align-items: center;
-//   align-content: center;
+    }
+  }
 
-//   div {
-//     display: flex;
-//   }
-// }
+// Mobile/Tablet - Additional Info Card styles
+@media screen 
+  and (min-device-width: 700px) 
+  and (max-device-width: 800px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (min-resolution: 192dpi) {
+    .additional-info-div {
+        section {
+          display: flex;
+          flex-flow: row;
+          align-items: flex-start;
+          justify-content: center;
 
-// legend {
-//   text-align: left;
-//   font-weight: bold;
-//   margin: 1rem;
-// }
+          button {
+            font-size: .5rem;
+            height: fit-content;
+            width: fit-content;
+          }
+        }
+      
+      }
 
-// input[type='checkbox'] {
-//   width: 1rem;
-// }
+}
 
-// .advanced-search-div {
-//     display: flex;
-//     align-items: center;
+@media screen 
+  and (min-device-width: 200px) 
+  and (max-device-width: 700px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (min-resolution: 192dpi) {
+      .result-card-section {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
 
-//     button {
-//       text-align: center;
-//       width: 2rem;
-//       height: 2rem;
-//       margin-left: 1rem;
-//     }
-// }
+        div {
+          margin-bottom: .6rem;
+        }
+      }
+      
+      .additional-info-div {
+        section {
+          display: flex;
+          flex-flow: row wrap;
+          align-items: flex-start;
+          justify-content: center;
+
+          div {
+            width: 50%;
+          }
+
+          button {
+            font-size: .5rem;
+            height: fit-content;
+            width: fit-content;
+          }
+        }
+      
+      }
+
+      .tags-container-div {
+          display: flex;
+          justify-content: center;
+        }
+  }
